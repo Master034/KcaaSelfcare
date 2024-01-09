@@ -1,0 +1,2569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCD35822-2D76-48A5-8ECB-987A8B698457}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test_Web_Forms</RootNamespace>
+    <AssemblyName>Test Web Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44345</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="LeaveApplication.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="Template\.gitignore" />
+    <Content Include="Template\gulpfile.js" />
+    <Content Include="Template\gulp\build.gulp.js" />
+    <Content Include="Template\gulp\clean.gulp.js" />
+    <Content Include="Template\gulp\image.gulp.js" />
+    <Content Include="Template\gulp\link.gulp.js" />
+    <Content Include="Template\gulp\product.gulp.js" />
+    <Content Include="Template\gulp\pug.gulp.js" />
+    <Content Include="Template\gulp\script.gulp.js" />
+    <Content Include="Template\gulp\style.gulp.js" />
+    <Content Include="Template\gulp\utils.js" />
+    <Content Include="Template\gulp\vendor.gulp.js" />
+    <Content Include="Template\gulp\w3c.gulp.js" />
+    <Content Include="Template\gulp\watch.gulp.js" />
+    <Content Include="Template\public\apps\calendar.html" />
+    <Content Include="Template\public\apps\chat.html" />
+    <Content Include="Template\public\apps\crm\add-contact.html" />
+    <Content Include="Template\public\apps\crm\analytics.html" />
+    <Content Include="Template\public\apps\crm\deal-details.html" />
+    <Content Include="Template\public\apps\crm\deals.html" />
+    <Content Include="Template\public\apps\crm\lead-details.html" />
+    <Content Include="Template\public\apps\crm\leads.html" />
+    <Content Include="Template\public\apps\crm\reports-details.html" />
+    <Content Include="Template\public\apps\crm\reports.html" />
+    <Content Include="Template\public\apps\e-commerce\admin\add-product.html" />
+    <Content Include="Template\public\apps\e-commerce\admin\customer-details.html" />
+    <Content Include="Template\public\apps\e-commerce\admin\customers.html" />
+    <Content Include="Template\public\apps\e-commerce\admin\order-details.html" />
+    <Content Include="Template\public\apps\e-commerce\admin\orders.html" />
+    <Content Include="Template\public\apps\e-commerce\admin\products.html" />
+    <Content Include="Template\public\apps\e-commerce\admin\refund.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\cart.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\checkout.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\favourite-stores.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\homepage.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\invoice.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\order-tracking.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\product-details.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\products-filter.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\profile.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\shipping-info.html" />
+    <Content Include="Template\public\apps\e-commerce\landing\wishlist.html" />
+    <Content Include="Template\public\apps\email\compose.html" />
+    <Content Include="Template\public\apps\email\email-detail.html" />
+    <Content Include="Template\public\apps\email\inbox.html" />
+    <Content Include="Template\public\apps\events\create-an-event.html" />
+    <Content Include="Template\public\apps\events\event-detail.html" />
+    <Content Include="Template\public\apps\kanban\boards.html" />
+    <Content Include="Template\public\apps\kanban\create-kanban-board.html" />
+    <Content Include="Template\public\apps\kanban\kanban.html" />
+    <Content Include="Template\public\apps\project-management\create-new.html" />
+    <Content Include="Template\public\apps\project-management\project-board-view.html" />
+    <Content Include="Template\public\apps\project-management\project-card-view.html" />
+    <Content Include="Template\public\apps\project-management\project-details.html" />
+    <Content Include="Template\public\apps\project-management\project-list-view.html" />
+    <Content Include="Template\public\apps\project-management\todo-list.html" />
+    <Content Include="Template\public\apps\social\feed.html" />
+    <Content Include="Template\public\apps\social\profile.html" />
+    <Content Include="Template\public\apps\social\settings.html" />
+    <Content Include="Template\public\assets\css\theme-rtl.css" />
+    <Content Include="Template\public\assets\css\theme-rtl.min.css" />
+    <Content Include="Template\public\assets\css\theme.css" />
+    <Content Include="Template\public\assets\css\theme.min.css" />
+    <Content Include="Template\public\assets\css\user-rtl.css" />
+    <Content Include="Template\public\assets\css\user-rtl.min.css" />
+    <Content Include="Template\public\assets\css\user.css" />
+    <Content Include="Template\public\assets\css\user.min.css" />
+    <Content Include="Template\public\assets\data\usa.js" />
+    <Content Include="Template\public\assets\data\world.js" />
+    <Content Include="Template\public\assets\img\bg\10-dark.png" />
+    <Content Include="Template\public\assets\img\bg\10.png" />
+    <Content Include="Template\public\assets\img\bg\13.png" />
+    <Content Include="Template\public\assets\img\bg\25.png" />
+    <Content Include="Template\public\assets\img\bg\26.png" />
+    <Content Include="Template\public\assets\img\bg\27.png" />
+    <Content Include="Template\public\assets\img\bg\28.png" />
+    <Content Include="Template\public\assets\img\bg\29.png" />
+    <Content Include="Template\public\assets\img\bg\30.png" />
+    <Content Include="Template\public\assets\img\bg\31.png" />
+    <Content Include="Template\public\assets\img\bg\32.png" />
+    <Content Include="Template\public\assets\img\bg\33.png" />
+    <Content Include="Template\public\assets\img\bg\34.png" />
+    <Content Include="Template\public\assets\img\bg\35.png" />
+    <Content Include="Template\public\assets\img\bg\36.png" />
+    <Content Include="Template\public\assets\img\bg\37.png" />
+    <Content Include="Template\public\assets\img\bg\38.png" />
+    <Content Include="Template\public\assets\img\bg\39.png" />
+    <Content Include="Template\public\assets\img\bg\40.png" />
+    <Content Include="Template\public\assets\img\bg\8-dark.png" />
+    <Content Include="Template\public\assets\img\bg\8.png" />
+    <Content Include="Template\public\assets\img\bg\9-dark.png" />
+    <Content Include="Template\public\assets\img\bg\9.png" />
+    <Content Include="Template\public\assets\img\bg\bg-1-2.png" />
+    <Content Include="Template\public\assets\img\bg\bg-11-dark.png" />
+    <Content Include="Template\public\assets\img\bg\bg-11.png" />
+    <Content Include="Template\public\assets\img\bg\bg-12.png" />
+    <Content Include="Template\public\assets\img\bg\bg-13.png" />
+    <Content Include="Template\public\assets\img\bg\bg-17.png" />
+    <Content Include="Template\public\assets\img\bg\bg-18.png" />
+    <Content Include="Template\public\assets\img\bg\bg-19.png" />
+    <Content Include="Template\public\assets\img\bg\bg-2.png" />
+    <Content Include="Template\public\assets\img\bg\bg-21.png" />
+    <Content Include="Template\public\assets\img\bg\bg-22.png" />
+    <Content Include="Template\public\assets\img\bg\bg-23.png" />
+    <Content Include="Template\public\assets\img\bg\bg-24.png" />
+    <Content Include="Template\public\assets\img\bg\bg-28.png" />
+    <Content Include="Template\public\assets\img\bg\bg-29.png" />
+    <Content Include="Template\public\assets\img\bg\bg-30.png" />
+    <Content Include="Template\public\assets\img\bg\bg-31.png" />
+    <Content Include="Template\public\assets\img\bg\bg-32.png" />
+    <Content Include="Template\public\assets\img\bg\bg-33.png" />
+    <Content Include="Template\public\assets\img\bg\bg-34.png" />
+    <Content Include="Template\public\assets\img\bg\bg-35.png" />
+    <Content Include="Template\public\assets\img\bg\bg-36.png" />
+    <Content Include="Template\public\assets\img\bg\bg-38.png" />
+    <Content Include="Template\public\assets\img\bg\bg-39.png" />
+    <Content Include="Template\public\assets\img\bg\bg-40.png" />
+    <Content Include="Template\public\assets\img\bg\bg-5.png" />
+    <Content Include="Template\public\assets\img\bg\bg-8.png" />
+    <Content Include="Template\public\assets\img\bg\bg-9.png" />
+    <Content Include="Template\public\assets\img\bg\bg-dark-40.png" />
+    <Content Include="Template\public\assets\img\bg\bg-dark-5.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-15.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-17.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-20.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-21.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-22.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-23.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-24.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-25.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-26.png" />
+    <Content Include="Template\public\assets\img\bg\bg-left-5.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-15.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-17.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-20.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-21.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-22.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-23.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-24.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-25.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-26.png" />
+    <Content Include="Template\public\assets\img\bg\bg-right-6.png" />
+    <Content Include="Template\public\assets\img\bg\figma.png" />
+    <Content Include="Template\public\assets\img\bg\gradient-bg.png" />
+    <Content Include="Template\public\assets\img\blog\blog-1.png" />
+    <Content Include="Template\public\assets\img\blog\blog-2.png" />
+    <Content Include="Template\public\assets\img\blog\blog-3.png" />
+    <Content Include="Template\public\assets\img\blog\blog-4.png" />
+    <Content Include="Template\public\assets\img\blog\blog-5.png" />
+    <Content Include="Template\public\assets\img\blog\blog-6.png" />
+    <Content Include="Template\public\assets\img\blog\blog-7.png" />
+    <Content Include="Template\public\assets\img\brand2\1.png" />
+    <Content Include="Template\public\assets\img\brand2\2.png" />
+    <Content Include="Template\public\assets\img\brand2\apple-2.png" />
+    <Content Include="Template\public\assets\img\brand2\asus-rog.png" />
+    <Content Include="Template\public\assets\img\brand2\b.png" />
+    <Content Include="Template\public\assets\img\brand2\blender.png" />
+    <Content Include="Template\public\assets\img\brand2\dell.png" />
+    <Content Include="Template\public\assets\img\brand2\discord.png" />
+    <Content Include="Template\public\assets\img\brand2\facebook-f.png" />
+    <Content Include="Template\public\assets\img\brand2\google-g.png" />
+    <Content Include="Template\public\assets\img\brand2\google-store.png" />
+    <Content Include="Template\public\assets\img\brand2\honda.png" />
+    <Content Include="Template\public\assets\img\brand2\hp.png" />
+    <Content Include="Template\public\assets\img\brand2\huawei.png" />
+    <Content Include="Template\public\assets\img\brand2\ibm.png" />
+    <Content Include="Template\public\assets\img\brand2\intel-2.png" />
+    <Content Include="Template\public\assets\img\brand2\lenovo.png" />
+    <Content Include="Template\public\assets\img\brand2\mail-bluster-1.png" />
+    <Content Include="Template\public\assets\img\brand2\netflix-n.png" />
+    <Content Include="Template\public\assets\img\brand2\oneplus-2.png" />
+    <Content Include="Template\public\assets\img\brand2\oppo.png" />
+    <Content Include="Template\public\assets\img\brand2\pocket.png" />
+    <Content Include="Template\public\assets\img\brand2\redragon.png" />
+    <Content Include="Template\public\assets\img\brand2\suzuki-2.png" />
+    <Content Include="Template\public\assets\img\brand2\theme-wagon.png" />
+    <Content Include="Template\public\assets\img\brand2\upwork.png" />
+    <Content Include="Template\public\assets\img\brand2\xbox.png" />
+    <Content Include="Template\public\assets\img\brand2\xiaomi.png" />
+    <Content Include="Template\public\assets\img\brand2\yamaha.png" />
+    <Content Include="Template\public\assets\img\brands\apple-2.png" />
+    <Content Include="Template\public\assets\img\brands\asus-rog.png" />
+    <Content Include="Template\public\assets\img\brands\dell.png" />
+    <Content Include="Template\public\assets\img\brands\google-store.png" />
+    <Content Include="Template\public\assets\img\brands\honda.png" />
+    <Content Include="Template\public\assets\img\brands\hp.png" />
+    <Content Include="Template\public\assets\img\brands\ibm.png" />
+    <Content Include="Template\public\assets\img\brands\intel-2.png" />
+    <Content Include="Template\public\assets\img\brands\lenovo.png" />
+    <Content Include="Template\public\assets\img\brands\oneplus-2.png" />
+    <Content Include="Template\public\assets\img\brands\oppo.png" />
+    <Content Include="Template\public\assets\img\brands\redragon.png" />
+    <Content Include="Template\public\assets\img\brands\suzuki-2.png" />
+    <Content Include="Template\public\assets\img\brands\xbox.png" />
+    <Content Include="Template\public\assets\img\brands\xiaomi.png" />
+    <Content Include="Template\public\assets\img\brands\yamaha.png" />
+    <Content Include="Template\public\assets\img\brand\honda.png" />
+    <Content Include="Template\public\assets\img\brand\hp.png" />
+    <Content Include="Template\public\assets\img\brand\huawei.png" />
+    <Content Include="Template\public\assets\img\brand\oppo.png" />
+    <Content Include="Template\public\assets\img\chat\1.png" />
+    <Content Include="Template\public\assets\img\chat\10.png" />
+    <Content Include="Template\public\assets\img\chat\11.png" />
+    <Content Include="Template\public\assets\img\chat\12.png" />
+    <Content Include="Template\public\assets\img\chat\13.png" />
+    <Content Include="Template\public\assets\img\chat\14.png" />
+    <Content Include="Template\public\assets\img\chat\15.png" />
+    <Content Include="Template\public\assets\img\chat\2.png" />
+    <Content Include="Template\public\assets\img\chat\3.png" />
+    <Content Include="Template\public\assets\img\chat\4.png" />
+    <Content Include="Template\public\assets\img\chat\5.png" />
+    <Content Include="Template\public\assets\img\chat\6.png" />
+    <Content Include="Template\public\assets\img\chat\7.png" />
+    <Content Include="Template\public\assets\img\chat\8.png" />
+    <Content Include="Template\public\assets\img\chat\9.png" />
+    <Content Include="Template\public\assets\img\country\australia.png" />
+    <Content Include="Template\public\assets\img\country\china.png" />
+    <Content Include="Template\public\assets\img\country\england.png" />
+    <Content Include="Template\public\assets\img\country\india.png" />
+    <Content Include="Template\public\assets\img\country\indonesia.png" />
+    <Content Include="Template\public\assets\img\country\japan.png" />
+    <Content Include="Template\public\assets\img\country\russia.png" />
+    <Content Include="Template\public\assets\img\country\south-korea.png" />
+    <Content Include="Template\public\assets\img\country\usa.png" />
+    <Content Include="Template\public\assets\img\country\vietnam.png" />
+    <Content Include="Template\public\assets\img\e-commerce\1.png" />
+    <Content Include="Template\public\assets\img\e-commerce\2.png" />
+    <Content Include="Template\public\assets\img\e-commerce\3.png" />
+    <Content Include="Template\public\assets\img\e-commerce\4.png" />
+    <Content Include="Template\public\assets\img\e-commerce\5.png" />
+    <Content Include="Template\public\assets\img\e-commerce\6.png" />
+    <Content Include="Template\public\assets\img\e-commerce\best-in-market-bg-2.png" />
+    <Content Include="Template\public\assets\img\e-commerce\best-in-market-bg.png" />
+    <Content Include="Template\public\assets\img\e-commerce\gift-items-banner-bg.png" />
+    <Content Include="Template\public\assets\img\e-commerce\review-1.png" />
+    <Content Include="Template\public\assets\img\e-commerce\review-11.jpg" />
+    <Content Include="Template\public\assets\img\e-commerce\review-12.jpg" />
+    <Content Include="Template\public\assets\img\e-commerce\review-13.jpg" />
+    <Content Include="Template\public\assets\img\e-commerce\review-14.jpg" />
+    <Content Include="Template\public\assets\img\e-commerce\review-15.jpg" />
+    <Content Include="Template\public\assets\img\e-commerce\review-16.jpg" />
+    <Content Include="Template\public\assets\img\e-commerce\review-2.png" />
+    <Content Include="Template\public\assets\img\e-commerce\review-3.png" />
+    <Content Include="Template\public\assets\img\e-commerce\review-4.png" />
+    <Content Include="Template\public\assets\img\e-commerce\review-5.png" />
+    <Content Include="Template\public\assets\img\e-commerce\review-6.png" />
+    <Content Include="Template\public\assets\img\e-commerce\whooping_banner_bag.png" />
+    <Content Include="Template\public\assets\img\e-commerce\whooping_banner_product.png" />
+    <Content Include="Template\public\assets\img\e-commerce\whooping_banner_shape.png" />
+    <Content Include="Template\public\assets\img\e-commerce\whooping_banner_shape_2.png" />
+    <Content Include="Template\public\assets\img\favicons\android-chrome-192x192.png" />
+    <Content Include="Template\public\assets\img\favicons\android-chrome-512x512.png" />
+    <Content Include="Template\public\assets\img\favicons\apple-touch-icon.png" />
+    <Content Include="Template\public\assets\img\favicons\browserconfig.xml" />
+    <Content Include="Template\public\assets\img\favicons\favicon-16x16.png" />
+    <Content Include="Template\public\assets\img\favicons\favicon-32x32.png" />
+    <Content Include="Template\public\assets\img\favicons\favicon.ico" />
+    <Content Include="Template\public\assets\img\favicons\mstile-150x150.png" />
+    <Content Include="Template\public\assets\img\gallery\1.png" />
+    <Content Include="Template\public\assets\img\gallery\10.png" />
+    <Content Include="Template\public\assets\img\gallery\11.png" />
+    <Content Include="Template\public\assets\img\gallery\12.png" />
+    <Content Include="Template\public\assets\img\gallery\13.png" />
+    <Content Include="Template\public\assets\img\gallery\14.png" />
+    <Content Include="Template\public\assets\img\gallery\15.png" />
+    <Content Include="Template\public\assets\img\gallery\16.png" />
+    <Content Include="Template\public\assets\img\gallery\17.png" />
+    <Content Include="Template\public\assets\img\gallery\18.png" />
+    <Content Include="Template\public\assets\img\gallery\19.jpg" />
+    <Content Include="Template\public\assets\img\gallery\19.png" />
+    <Content Include="Template\public\assets\img\gallery\2.png" />
+    <Content Include="Template\public\assets\img\gallery\20.jpg" />
+    <Content Include="Template\public\assets\img\gallery\20.png" />
+    <Content Include="Template\public\assets\img\gallery\21.jpg" />
+    <Content Include="Template\public\assets\img\gallery\21.png" />
+    <Content Include="Template\public\assets\img\gallery\22.png" />
+    <Content Include="Template\public\assets\img\gallery\23.png" />
+    <Content Include="Template\public\assets\img\gallery\24.png" />
+    <Content Include="Template\public\assets\img\gallery\25.png" />
+    <Content Include="Template\public\assets\img\gallery\26.png" />
+    <Content Include="Template\public\assets\img\gallery\27.png" />
+    <Content Include="Template\public\assets\img\gallery\28.png" />
+    <Content Include="Template\public\assets\img\gallery\29.png" />
+    <Content Include="Template\public\assets\img\gallery\3.png" />
+    <Content Include="Template\public\assets\img\gallery\30.png" />
+    <Content Include="Template\public\assets\img\gallery\31.png" />
+    <Content Include="Template\public\assets\img\gallery\32.png" />
+    <Content Include="Template\public\assets\img\gallery\33.png" />
+    <Content Include="Template\public\assets\img\gallery\34.png" />
+    <Content Include="Template\public\assets\img\gallery\4.png" />
+    <Content Include="Template\public\assets\img\gallery\5.png" />
+    <Content Include="Template\public\assets\img\gallery\6.png" />
+    <Content Include="Template\public\assets\img\gallery\7.png" />
+    <Content Include="Template\public\assets\img\gallery\8.png" />
+    <Content Include="Template\public\assets\img\gallery\9.png" />
+    <Content Include="Template\public\assets\img\generic\1.jpg" />
+    <Content Include="Template\public\assets\img\generic\10 %282%29.jpg" />
+    <Content Include="Template\public\assets\img\generic\10.jpg" />
+    <Content Include="Template\public\assets\img\generic\11.jpg" />
+    <Content Include="Template\public\assets\img\generic\12.jpg" />
+    <Content Include="Template\public\assets\img\generic\13.jpg" />
+    <Content Include="Template\public\assets\img\generic\2.jpg" />
+    <Content Include="Template\public\assets\img\generic\23.jpg" />
+    <Content Include="Template\public\assets\img\generic\24.jpg" />
+    <Content Include="Template\public\assets\img\generic\25.jpg" />
+    <Content Include="Template\public\assets\img\generic\26.png" />
+    <Content Include="Template\public\assets\img\generic\28.jpg" />
+    <Content Include="Template\public\assets\img\generic\3.jpg" />
+    <Content Include="Template\public\assets\img\generic\30.jpg" />
+    <Content Include="Template\public\assets\img\generic\31.jpg" />
+    <Content Include="Template\public\assets\img\generic\32.jpg" />
+    <Content Include="Template\public\assets\img\generic\33.jpg" />
+    <Content Include="Template\public\assets\img\generic\34.jpg" />
+    <Content Include="Template\public\assets\img\generic\34.png" />
+    <Content Include="Template\public\assets\img\generic\35.jpg" />
+    <Content Include="Template\public\assets\img\generic\36.png" />
+    <Content Include="Template\public\assets\img\generic\37.png" />
+    <Content Include="Template\public\assets\img\generic\38.png" />
+    <Content Include="Template\public\assets\img\generic\4.jpg" />
+    <Content Include="Template\public\assets\img\generic\40.png" />
+    <Content Include="Template\public\assets\img\generic\41.png" />
+    <Content Include="Template\public\assets\img\generic\42.png" />
+    <Content Include="Template\public\assets\img\generic\43.png" />
+    <Content Include="Template\public\assets\img\generic\44.png" />
+    <Content Include="Template\public\assets\img\generic\45.png" />
+    <Content Include="Template\public\assets\img\generic\46.png" />
+    <Content Include="Template\public\assets\img\generic\47.png" />
+    <Content Include="Template\public\assets\img\generic\48.png" />
+    <Content Include="Template\public\assets\img\generic\49.png" />
+    <Content Include="Template\public\assets\img\generic\5.jpg" />
+    <Content Include="Template\public\assets\img\generic\50.png" />
+    <Content Include="Template\public\assets\img\generic\51.png" />
+    <Content Include="Template\public\assets\img\generic\52.png" />
+    <Content Include="Template\public\assets\img\generic\53.png" />
+    <Content Include="Template\public\assets\img\generic\54.png" />
+    <Content Include="Template\public\assets\img\generic\55.png" />
+    <Content Include="Template\public\assets\img\generic\56.png" />
+    <Content Include="Template\public\assets\img\generic\57.png" />
+    <Content Include="Template\public\assets\img\generic\59.png" />
+    <Content Include="Template\public\assets\img\generic\6 %282%29.jpg" />
+    <Content Include="Template\public\assets\img\generic\6.jpg" />
+    <Content Include="Template\public\assets\img\generic\60.png" />
+    <Content Include="Template\public\assets\img\generic\61.png" />
+    <Content Include="Template\public\assets\img\generic\63.png" />
+    <Content Include="Template\public\assets\img\generic\64.png" />
+    <Content Include="Template\public\assets\img\generic\65.png" />
+    <Content Include="Template\public\assets\img\generic\66.jpg" />
+    <Content Include="Template\public\assets\img\generic\66.png" />
+    <Content Include="Template\public\assets\img\generic\7.jpg" />
+    <Content Include="Template\public\assets\img\generic\8.jpg" />
+    <Content Include="Template\public\assets\img\generic\9.jpg" />
+    <Content Include="Template\public\assets\img\generic\bg-1.jpg" />
+    <Content Include="Template\public\assets\img\generic\bg-2.jpg" />
+    <Content Include="Template\public\assets\img\generic\bg-navbar.png" />
+    <Content Include="Template\public\assets\img\generic\calander-65.png" />
+    <Content Include="Template\public\assets\img\generic\capterra.png" />
+    <Content Include="Template\public\assets\img\generic\card.png" />
+    <Content Include="Template\public\assets\img\generic\chat-66.png" />
+    <Content Include="Template\public\assets\img\generic\cover-photo.png" />
+    <Content Include="Template\public\assets\img\generic\dark-mode.png" />
+    <Content Include="Template\public\assets\img\generic\dashboard-alt-dark.png" />
+    <Content Include="Template\public\assets\img\generic\dashboard-alt.jpg" />
+    <Content Include="Template\public\assets\img\generic\dashboard-alt.png" />
+    <Content Include="Template\public\assets\img\generic\dashboard-old.png" />
+    <Content Include="Template\public\assets\img\generic\default-dark.png" />
+    <Content Include="Template\public\assets\img\generic\default-light.png" />
+    <Content Include="Template\public\assets\img\generic\default.png" />
+    <Content Include="Template\public\assets\img\generic\dual-dark.png" />
+    <Content Include="Template\public\assets\img\generic\dual-light.png" />
+    <Content Include="Template\public\assets\img\generic\email-64.png" />
+    <Content Include="Template\public\assets\img\generic\falcon-mode-dark.jpg" />
+    <Content Include="Template\public\assets\img\generic\falcon-mode-default.jpg" />
+    <Content Include="Template\public\assets\img\generic\Frame-14.png" />
+    <Content Include="Template\public\assets\img\generic\html-falcon.png" />
+    <Content Include="Template\public\assets\img\generic\inverted.png" />
+    <Content Include="Template\public\assets\img\generic\nav-combo-dark.png" />
+    <Content Include="Template\public\assets\img\generic\nav-combo-light.png" />
+    <Content Include="Template\public\assets\img\generic\navbar-top-style-light.png" />
+    <Content Include="Template\public\assets\img\generic\showcase-footer-bg.png" />
+    <Content Include="Template\public\assets\img\generic\top-default-dark.png" />
+    <Content Include="Template\public\assets\img\generic\top-default.png" />
+    <Content Include="Template\public\assets\img\generic\top-slim-dark.png" />
+    <Content Include="Template\public\assets\img\generic\top-slim.png" />
+    <Content Include="Template\public\assets\img\generic\top-style-darker.png" />
+    <Content Include="Template\public\assets\img\generic\top-style-default-dark.png" />
+    <Content Include="Template\public\assets\img\generic\top-style-default.png" />
+    <Content Include="Template\public\assets\img\generic\top-style-lighter.png" />
+    <Content Include="Template\public\assets\img\generic\vertical-darker.png" />
+    <Content Include="Template\public\assets\img\generic\vertical-lighter.png" />
+    <Content Include="Template\public\assets\img\generic\vibrant.png" />
+    <Content Include="Template\public\assets\img\icons\all-night-dark.png" />
+    <Content Include="Template\public\assets\img\icons\all-night.png" />
+    <Content Include="Template\public\assets\img\icons\best-statistics-dark.png" />
+    <Content Include="Template\public\assets\img\icons\best-statistics.png" />
+    <Content Include="Template\public\assets\img\icons\blue.png" />
+    <Content Include="Template\public\assets\img\icons\caret-down-solid.svg" />
+    <Content Include="Template\public\assets\img\icons\caret-right-solid.svg" />
+    <Content Include="Template\public\assets\img\icons\cloud-upload.svg" />
+    <Content Include="Template\public\assets\img\icons\danger-cancel.svg" />
+    <Content Include="Template\public\assets\img\icons\editable-features-dark.png" />
+    <Content Include="Template\public\assets\img\icons\editable-features.png" />
+    <Content Include="Template\public\assets\img\icons\figma.png" />
+    <Content Include="Template\public\assets\img\icons\file.png" />
+    <Content Include="Template\public\assets\img\icons\green.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\10.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\11.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\12.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\13.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\14.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\15.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\16.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\17.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\18.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\19.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\20.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\21.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\22.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\23.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\24.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\25.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\26.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\2l.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\3l.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\4l.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\5.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\6.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\7.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\8.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\9.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\bolt.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\edit.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\moon.svg" />
+    <Content Include="Template\public\assets\img\icons\illustrations\pie.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\shield.png" />
+    <Content Include="Template\public\assets\img\icons\illustrations\sun.svg" />
+    <Content Include="Template\public\assets\img\icons\image-icon.png" />
+    <Content Include="Template\public\assets\img\icons\info-circle.svg" />
+    <Content Include="Template\public\assets\img\icons\lightning-speed-dark.png" />
+    <Content Include="Template\public\assets\img\icons\lightning-speed.png" />
+    <Content Include="Template\public\assets\img\icons\logo-1.png" />
+    <Content Include="Template\public\assets\img\icons\logo-bg.png" />
+    <Content Include="Template\public\assets\img\icons\logo-primary.png" />
+    <Content Include="Template\public\assets\img\icons\logo-white.png" />
+    <Content Include="Template\public\assets\img\icons\logo.png" />
+    <Content Include="Template\public\assets\img\icons\map-marker.png" />
+    <Content Include="Template\public\assets\img\icons\phoenix.png" />
+    <Content Include="Template\public\assets\img\icons\primary-stopwatch.svg" />
+    <Content Include="Template\public\assets\img\icons\red.png" />
+    <Content Include="Template\public\assets\img\icons\secondary-cancel.svg" />
+    <Content Include="Template\public\assets\img\icons\skyblue.png" />
+    <Content Include="Template\public\assets\img\icons\star.svg" />
+    <Content Include="Template\public\assets\img\icons\star_on.svg" />
+    <Content Include="Template\public\assets\img\icons\stop.png" />
+    <Content Include="Template\public\assets\img\icons\success-check.svg" />
+    <Content Include="Template\public\assets\img\icons\thumbs-up.png" />
+    <Content Include="Template\public\assets\img\icons\warning-stopwatch.svg" />
+    <Content Include="Template\public\assets\img\icons\warning-stopwatch2.svg" />
+    <Content Include="Template\public\assets\img\icons\yellow.png" />
+    <Content Include="Template\public\assets\img\kanban\1.jpg" />
+    <Content Include="Template\public\assets\img\kanban\a1.jpg" />
+    <Content Include="Template\public\assets\img\kanban\bg1.jpg" />
+    <Content Include="Template\public\assets\img\kanban\bg2.jpg" />
+    <Content Include="Template\public\assets\img\kanban\bg3.jpg" />
+    <Content Include="Template\public\assets\img\kanban\bg4.jpg" />
+    <Content Include="Template\public\assets\img\kanban\bg5.jpg" />
+    <Content Include="Template\public\assets\img\kanban\bg6.jpg" />
+    <Content Include="Template\public\assets\img\kanban\board-1.png" />
+    <Content Include="Template\public\assets\img\kanban\board-2.png" />
+    <Content Include="Template\public\assets\img\kanban\board-3.png" />
+    <Content Include="Template\public\assets\img\kanban\board-4.png" />
+    <Content Include="Template\public\assets\img\kanban\board-5.png" />
+    <Content Include="Template\public\assets\img\kanban\board-6.png" />
+    <Content Include="Template\public\assets\img\kanban\board-7.png" />
+    <Content Include="Template\public\assets\img\kanban\board-8.png" />
+    <Content Include="Template\public\assets\img\kanban\board-9.png" />
+    <Content Include="Template\public\assets\img\kanban\board-dark.png" />
+    <Content Include="Template\public\assets\img\kanban\board-ligth.png" />
+    <Content Include="Template\public\assets\img\kanban\board.png" />
+    <Content Include="Template\public\assets\img\kanban\create-board.png" />
+    <Content Include="Template\public\assets\img\kanban\glass.jpg" />
+    <Content Include="Template\public\assets\img\kanban\home.jpg" />
+    <Content Include="Template\public\assets\img\kanban\image-dark.png" />
+    <Content Include="Template\public\assets\img\kanban\image-light.png" />
+    <Content Include="Template\public\assets\img\kanban\modal-bg.jpg" />
+    <Content Include="Template\public\assets\img\kanban\wall.jpg" />
+    <Content Include="Template\public\assets\img\kcaalogo.png" />
+    <Content Include="Template\public\assets\img\logos\american_express.png" />
+    <Content Include="Template\public\assets\img\logos\discover.png" />
+    <Content Include="Template\public\assets\img\logos\mastercard.png" />
+    <Content Include="Template\public\assets\img\logos\phoenix-mart.png" />
+    <Content Include="Template\public\assets\img\logos\visa.png" />
+    <Content Include="Template\public\assets\img\map-marker.png" />
+    <Content Include="Template\public\assets\img\products\1.png" />
+    <Content Include="Template\public\assets\img\products\10.png" />
+    <Content Include="Template\public\assets\img\products\11.png" />
+    <Content Include="Template\public\assets\img\products\12.png" />
+    <Content Include="Template\public\assets\img\products\13.png" />
+    <Content Include="Template\public\assets\img\products\14.png" />
+    <Content Include="Template\public\assets\img\products\15.png" />
+    <Content Include="Template\public\assets\img\products\16.png" />
+    <Content Include="Template\public\assets\img\products\17.png" />
+    <Content Include="Template\public\assets\img\products\18.png" />
+    <Content Include="Template\public\assets\img\products\19.png" />
+    <Content Include="Template\public\assets\img\products\2.png" />
+    <Content Include="Template\public\assets\img\products\20.png" />
+    <Content Include="Template\public\assets\img\products\21.png" />
+    <Content Include="Template\public\assets\img\products\22.png" />
+    <Content Include="Template\public\assets\img\products\23.png" />
+    <Content Include="Template\public\assets\img\products\24.png" />
+    <Content Include="Template\public\assets\img\products\25.png" />
+    <Content Include="Template\public\assets\img\products\26.png" />
+    <Content Include="Template\public\assets\img\products\27.png" />
+    <Content Include="Template\public\assets\img\products\3.png" />
+    <Content Include="Template\public\assets\img\products\300x300\1.png" />
+    <Content Include="Template\public\assets\img\products\300x300\10.png" />
+    <Content Include="Template\public\assets\img\products\300x300\11.png" />
+    <Content Include="Template\public\assets\img\products\300x300\12.png" />
+    <Content Include="Template\public\assets\img\products\300x300\13.png" />
+    <Content Include="Template\public\assets\img\products\300x300\14.png" />
+    <Content Include="Template\public\assets\img\products\300x300\15.png" />
+    <Content Include="Template\public\assets\img\products\300x300\17.png" />
+    <Content Include="Template\public\assets\img\products\300x300\18.png" />
+    <Content Include="Template\public\assets\img\products\300x300\19.png" />
+    <Content Include="Template\public\assets\img\products\300x300\2.png" />
+    <Content Include="Template\public\assets\img\products\300x300\20.png" />
+    <Content Include="Template\public\assets\img\products\300x300\21.png" />
+    <Content Include="Template\public\assets\img\products\300x300\3.png" />
+    <Content Include="Template\public\assets\img\products\300x300\4.png" />
+    <Content Include="Template\public\assets\img\products\300x300\5.png" />
+    <Content Include="Template\public\assets\img\products\300x300\6.png" />
+    <Content Include="Template\public\assets\img\products\300x300\7.png" />
+    <Content Include="Template\public\assets\img\products\300x300\8.png" />
+    <Content Include="Template\public\assets\img\products\300x300\9.png" />
+    <Content Include="Template\public\assets\img\products\4.png" />
+    <Content Include="Template\public\assets\img\products\5.png" />
+    <Content Include="Template\public\assets\img\products\6.png" />
+    <Content Include="Template\public\assets\img\products\60x60\1.png" />
+    <Content Include="Template\public\assets\img\products\60x60\10.png" />
+    <Content Include="Template\public\assets\img\products\60x60\11.png" />
+    <Content Include="Template\public\assets\img\products\60x60\12.png" />
+    <Content Include="Template\public\assets\img\products\60x60\13.png" />
+    <Content Include="Template\public\assets\img\products\60x60\14.png" />
+    <Content Include="Template\public\assets\img\products\60x60\15.png" />
+    <Content Include="Template\public\assets\img\products\60x60\17.png" />
+    <Content Include="Template\public\assets\img\products\60x60\18.png" />
+    <Content Include="Template\public\assets\img\products\60x60\19.png" />
+    <Content Include="Template\public\assets\img\products\60x60\2.png" />
+    <Content Include="Template\public\assets\img\products\60x60\20.png" />
+    <Content Include="Template\public\assets\img\products\60x60\21.png" />
+    <Content Include="Template\public\assets\img\products\60x60\3.png" />
+    <Content Include="Template\public\assets\img\products\60x60\4.png" />
+    <Content Include="Template\public\assets\img\products\60x60\5.png" />
+    <Content Include="Template\public\assets\img\products\60x60\6.png" />
+    <Content Include="Template\public\assets\img\products\60x60\7.png" />
+    <Content Include="Template\public\assets\img\products\60x60\8.png" />
+    <Content Include="Template\public\assets\img\products\60x60\9.png" />
+    <Content Include="Template\public\assets\img\products\7.png" />
+    <Content Include="Template\public\assets\img\products\8.png" />
+    <Content Include="Template\public\assets\img\products\9.png" />
+    <Content Include="Template\public\assets\img\products\details\blue_back.png" />
+    <Content Include="Template\public\assets\img\products\details\blue_front.png" />
+    <Content Include="Template\public\assets\img\products\details\blue_side.png" />
+    <Content Include="Template\public\assets\img\products\details\green_back.png" />
+    <Content Include="Template\public\assets\img\products\details\green_front.png" />
+    <Content Include="Template\public\assets\img\products\details\green_side.png" />
+    <Content Include="Template\public\assets\img\products\details\orange_back.png" />
+    <Content Include="Template\public\assets\img\products\details\orange_front.png" />
+    <Content Include="Template\public\assets\img\products\details\orange_side.png" />
+    <Content Include="Template\public\assets\img\products\details\purple_back.png" />
+    <Content Include="Template\public\assets\img\products\details\purple_front.png" />
+    <Content Include="Template\public\assets\img\products\details\purple_side.png" />
+    <Content Include="Template\public\assets\img\products\details\red_back.png" />
+    <Content Include="Template\public\assets\img\products\details\red_front.png" />
+    <Content Include="Template\public\assets\img\products\details\red_side.png" />
+    <Content Include="Template\public\assets\img\products\details\silver_back.png" />
+    <Content Include="Template\public\assets\img\products\details\silver_front.png" />
+    <Content Include="Template\public\assets\img\products\details\silver_side.png" />
+    <Content Include="Template\public\assets\img\products\details\yellow_back.png" />
+    <Content Include="Template\public\assets\img\products\details\yellow_front.png" />
+    <Content Include="Template\public\assets\img\products\details\yellow_side.png" />
+    <Content Include="Template\public\assets\img\products\thumb-1.png" />
+    <Content Include="Template\public\assets\img\products\thumb-2.png" />
+    <Content Include="Template\public\assets\img\products\thumb-3.png" />
+    <Content Include="Template\public\assets\img\products\thumb-4.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\1.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\13.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\14.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\15.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\16.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\18.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\19.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\21.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\22.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\22_2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\23.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\23_2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\24.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\24_2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\27.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\3.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\30.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\31.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\32.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\34.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\34_2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\35.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\35_2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\36.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\36_2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\37.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\37_2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\403-illustration.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\403.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\404-illustration.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\404.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\500-illustration.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\500.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\air-plane-dark.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\air-plane.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\auth-dark.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\auth.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\bag-2-dark.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\bag-2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\bag.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\bg-1.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_1.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_13.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_14.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_15.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_16.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_17.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_21.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_22.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_23.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_24.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_26.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_27.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_30.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_403-illustration.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_403.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_404-illustration.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_404.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_500-illustration.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_500.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\earth-plane-dark.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\earth-plane.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\light_17.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\light_30.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\paper-plane.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\plane.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\rocket-dark.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\rocket.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\shield-2-dark.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\shield-2.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\shield.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\star-dark.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\star.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\startup-shape.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\timeline-dark.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\timeline.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\untitled folder\darkk_17.png" />
+    <Content Include="Template\public\assets\img\spot-illustrations\untitled folder\lightt_17.png" />
+    <Content Include="Template\public\assets\img\test\38.png" />
+    <Content Include="Template\public\assets\img\test\dark_38.png" />
+    <Content Include="Template\public\assets\js\calendar.js" />
+    <Content Include="Template\public\assets\js\config.js" />
+    <Content Include="Template\public\assets\js\crm-analytics.js" />
+    <Content Include="Template\public\assets\js\crm-dashboard.js" />
+    <Content Include="Template\public\assets\js\echarts-example.js" />
+    <Content Include="Template\public\assets\js\ecommerce-dashboard.js" />
+    <Content Include="Template\public\assets\js\phoenix.js" />
+    <Content Include="Template\public\assets\js\project-details.js" />
+    <Content Include="Template\public\assets\js\projectmanagement-dashboard.js" />
+    <Content Include="Template\public\assets\js\showcase.js" />
+    <Content Include="Template\public\changelog.html" />
+    <Content Include="Template\public\dashboard\crm.html" />
+    <Content Include="Template\public\dashboard\project-management.html" />
+    <Content Include="Template\public\demo\combo-nav-slim.html" />
+    <Content Include="Template\public\demo\combo-nav.html" />
+    <Content Include="Template\public\demo\dark-mode.html" />
+    <Content Include="Template\public\demo\darknav.html" />
+    <Content Include="Template\public\demo\dual-nav.html" />
+    <Content Include="Template\public\demo\horizontal-slim.html" />
+    <Content Include="Template\public\demo\navbar-top-slim.html" />
+    <Content Include="Template\public\demo\navbar-top.html" />
+    <Content Include="Template\public\demo\sidenav-collapse.html" />
+    <Content Include="Template\public\demo\topnav-slim.html" />
+    <Content Include="Template\public\demo\vertical-sidenav.html" />
+    <Content Include="Template\public\documentation\customization\configuration.html" />
+    <Content Include="Template\public\documentation\customization\dark-mode.html" />
+    <Content Include="Template\public\documentation\customization\plugin.html" />
+    <Content Include="Template\public\documentation\customization\styling.html" />
+    <Content Include="Template\public\documentation\design-file.html" />
+    <Content Include="Template\public\documentation\getting-started.html" />
+    <Content Include="Template\public\documentation\gulp.html" />
+    <Content Include="Template\public\documentation\layouts\combo-navbar.html" />
+    <Content Include="Template\public\documentation\layouts\dual-nav.html" />
+    <Content Include="Template\public\documentation\layouts\horizontal-navbar.html" />
+    <Content Include="Template\public\documentation\layouts\vertical-navbar.html" />
+    <Content Include="Template\public\index.html" />
+    <Content Include="Template\public\modules\components\accordion.html" />
+    <Content Include="Template\public\modules\components\alerts.html" />
+    <Content Include="Template\public\modules\components\avatar.html" />
+    <Content Include="Template\public\modules\components\badge.html" />
+    <Content Include="Template\public\modules\components\breadcrumb.html" />
+    <Content Include="Template\public\modules\components\button.html" />
+    <Content Include="Template\public\modules\components\calendar.html" />
+    <Content Include="Template\public\modules\components\card.html" />
+    <Content Include="Template\public\modules\components\carousel\bootstrap.html" />
+    <Content Include="Template\public\modules\components\carousel\swiper.html" />
+    <Content Include="Template\public\modules\components\chat-widget.html" />
+    <Content Include="Template\public\modules\components\collapse.html" />
+    <Content Include="Template\public\modules\components\dropdown.html" />
+    <Content Include="Template\public\modules\components\list-group.html" />
+    <Content Include="Template\public\modules\components\modal.html" />
+    <Content Include="Template\public\modules\components\navs-and-tabs\navbar.html" />
+    <Content Include="Template\public\modules\components\navs-and-tabs\navs.html" />
+    <Content Include="Template\public\modules\components\navs-and-tabs\tabs.html" />
+    <Content Include="Template\public\modules\components\offcanvas.html" />
+    <Content Include="Template\public\modules\components\pagination.html" />
+    <Content Include="Template\public\modules\components\placeholder.html" />
+    <Content Include="Template\public\modules\components\popovers.html" />
+    <Content Include="Template\public\modules\components\progress-bar.html" />
+    <Content Include="Template\public\modules\components\progress.html" />
+    <Content Include="Template\public\modules\components\scrollspy.html" />
+    <Content Include="Template\public\modules\components\sortable.html" />
+    <Content Include="Template\public\modules\components\spinners.html" />
+    <Content Include="Template\public\modules\components\toast.html" />
+    <Content Include="Template\public\modules\components\tooltips.html" />
+    <Content Include="Template\public\modules\echarts\bar-charts.html" />
+    <Content Include="Template\public\modules\echarts\candlestick-charts.html" />
+    <Content Include="Template\public\modules\echarts\gauge-chart.html" />
+    <Content Include="Template\public\modules\echarts\geo-map.html" />
+    <Content Include="Template\public\modules\echarts\heatmap-charts.html" />
+    <Content Include="Template\public\modules\echarts\how-to-use.html" />
+    <Content Include="Template\public\modules\echarts\line-charts.html" />
+    <Content Include="Template\public\modules\echarts\pie-charts.html" />
+    <Content Include="Template\public\modules\echarts\radar-charts.html" />
+    <Content Include="Template\public\modules\echarts\scatter-charts.html" />
+    <Content Include="Template\public\modules\forms\advance\advance-select.html" />
+    <Content Include="Template\public\modules\forms\advance\date-picker.html" />
+    <Content Include="Template\public\modules\forms\advance\editor.html" />
+    <Content Include="Template\public\modules\forms\advance\emoji-button.html" />
+    <Content Include="Template\public\modules\forms\advance\file-uploader.html" />
+    <Content Include="Template\public\modules\forms\advance\rating.html" />
+    <Content Include="Template\public\modules\forms\basic\checks.html" />
+    <Content Include="Template\public\modules\forms\basic\floating-labels.html" />
+    <Content Include="Template\public\modules\forms\basic\form-control.html" />
+    <Content Include="Template\public\modules\forms\basic\input-group.html" />
+    <Content Include="Template\public\modules\forms\basic\layout.html" />
+    <Content Include="Template\public\modules\forms\basic\range.html" />
+    <Content Include="Template\public\modules\forms\basic\select.html" />
+    <Content Include="Template\public\modules\forms\validation.html" />
+    <Content Include="Template\public\modules\forms\wizard.html" />
+    <Content Include="Template\public\modules\icons\feather.html" />
+    <Content Include="Template\public\modules\icons\font-awesome.html" />
+    <Content Include="Template\public\modules\icons\unicons.html" />
+    <Content Include="Template\public\modules\tables\advance-tables.html" />
+    <Content Include="Template\public\modules\tables\basic-tables.html" />
+    <Content Include="Template\public\modules\tables\bulk-select.html" />
+    <Content Include="Template\public\modules\utilities\background.html" />
+    <Content Include="Template\public\modules\utilities\borders.html" />
+    <Content Include="Template\public\modules\utilities\colors.html" />
+    <Content Include="Template\public\modules\utilities\display.html" />
+    <Content Include="Template\public\modules\utilities\flex.html" />
+    <Content Include="Template\public\modules\utilities\float.html" />
+    <Content Include="Template\public\modules\utilities\grid.html" />
+    <Content Include="Template\public\modules\utilities\interactions.html" />
+    <Content Include="Template\public\modules\utilities\opacity.html" />
+    <Content Include="Template\public\modules\utilities\overflow.html" />
+    <Content Include="Template\public\modules\utilities\position.html" />
+    <Content Include="Template\public\modules\utilities\shadows.html" />
+    <Content Include="Template\public\modules\utilities\sizing.html" />
+    <Content Include="Template\public\modules\utilities\spacing.html" />
+    <Content Include="Template\public\modules\utilities\stacks.html" />
+    <Content Include="Template\public\modules\utilities\typography.html" />
+    <Content Include="Template\public\modules\utilities\vertical-align.html" />
+    <Content Include="Template\public\modules\utilities\visibility.html" />
+    <Content Include="Template\public\pages\authentication\card\2FA.html" />
+    <Content Include="Template\public\pages\authentication\card\forgot-password.html" />
+    <Content Include="Template\public\pages\authentication\card\lock-screen.html" />
+    <Content Include="Template\public\pages\authentication\card\reset-password.html" />
+    <Content Include="Template\public\pages\authentication\card\sign-in.html" />
+    <Content Include="Template\public\pages\authentication\card\sign-out.html" />
+    <Content Include="Template\public\pages\authentication\card\sign-up.html" />
+    <Content Include="Template\public\pages\authentication\simple\2FA.html" />
+    <Content Include="Template\public\pages\authentication\simple\forgot-password.html" />
+    <Content Include="Template\public\pages\authentication\simple\lock-screen.html" />
+    <Content Include="Template\public\pages\authentication\simple\reset-password.html" />
+    <Content Include="Template\public\pages\authentication\simple\sign-in.html" />
+    <Content Include="Template\public\pages\authentication\simple\sign-out.html" />
+    <Content Include="Template\public\pages\authentication\simple\sign-up.html" />
+    <Content Include="Template\public\pages\authentication\split\2FA.html" />
+    <Content Include="Template\public\pages\authentication\split\forgot-password.html" />
+    <Content Include="Template\public\pages\authentication\split\lock-screen.html" />
+    <Content Include="Template\public\pages\authentication\split\reset-password.html" />
+    <Content Include="Template\public\pages\authentication\split\sign-in.html" />
+    <Content Include="Template\public\pages\authentication\split\sign-out.html" />
+    <Content Include="Template\public\pages\authentication\split\sign-up.html" />
+    <Content Include="Template\public\pages\errors\403.html" />
+    <Content Include="Template\public\pages\errors\404.html" />
+    <Content Include="Template\public\pages\errors\500.html" />
+    <Content Include="Template\public\pages\faq\faq-accordion.html" />
+    <Content Include="Template\public\pages\faq\faq-tab.html" />
+    <Content Include="Template\public\pages\landing\alternate.html" />
+    <Content Include="Template\public\pages\landing\default.html" />
+    <Content Include="Template\public\pages\members.html" />
+    <Content Include="Template\public\pages\notifications.html" />
+    <Content Include="Template\public\pages\pricing\pricing-column.html" />
+    <Content Include="Template\public\pages\pricing\pricing-grid.html" />
+    <Content Include="Template\public\pages\starter.html" />
+    <Content Include="Template\public\pages\timeline.html" />
+    <Content Include="Template\public\showcase.html" />
+    <Content Include="Template\public\test\About.aspx" />
+    <Content Include="Template\public\test\WebForm1.aspx" />
+    <Content Include="Template\public\vendors\anchorjs\anchor.min.js" />
+    <Content Include="Template\public\vendors\bigpicture\BigPicture.js" />
+    <Content Include="Template\public\vendors\bootstrap\bootstrap.min.js" />
+    <Content Include="Template\public\vendors\chart\chart.min.js" />
+    <Content Include="Template\public\vendors\choices\base.min.css" />
+    <Content Include="Template\public\vendors\choices\choices.min.css" />
+    <Content Include="Template\public\vendors\choices\choices.min.js" />
+    <Content Include="Template\public\vendors\countup\countUp.umd.js" />
+    <Content Include="Template\public\vendors\dayjs\dayjs.min.js" />
+    <Content Include="Template\public\vendors\dhtmlx-gantt\dhtmlxgantt.css" />
+    <Content Include="Template\public\vendors\dhtmlx-gantt\dhtmlxgantt.js" />
+    <Content Include="Template\public\vendors\draggable\draggable.bundle.legacy.js" />
+    <Content Include="Template\public\vendors\dropzone\dropzone.min.css" />
+    <Content Include="Template\public\vendors\dropzone\dropzone.min.js" />
+    <Content Include="Template\public\vendors\echarts\echarts.min.js" />
+    <Content Include="Template\public\vendors\feather-icons\feather.min.js" />
+    <Content Include="Template\public\vendors\flatpickr\flatpickr.min.css" />
+    <Content Include="Template\public\vendors\fontawesome\all.min.js" />
+    <Content Include="Template\public\vendors\frappe-gantt\frappe-gantt.min.css" />
+    <Content Include="Template\public\vendors\frappe-gantt\frappe-gantt.min.js" />
+    <Content Include="Template\public\vendors\fullcalendar\main.js" />
+    <Content Include="Template\public\vendors\fullcalendar\main.min.css" />
+    <Content Include="Template\public\vendors\fullcalendar\main.min.js" />
+    <Content Include="Template\public\vendors\glightbox\glightbox.min.css" />
+    <Content Include="Template\public\vendors\glightbox\glightbox.min.js" />
+    <Content Include="Template\public\vendors\imagesloaded\imagesloaded.pkgd.min.js" />
+    <Content Include="Template\public\vendors\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Template\public\vendors\isotope-packery\packery-mode.pkgd.min.js" />
+    <Content Include="Template\public\vendors\is\is.min.js" />
+    <Content Include="Template\public\vendors\leaflet.markercluster\leaflet.markercluster.js" />
+    <Content Include="Template\public\vendors\leaflet.markercluster\MarkerCluster.css" />
+    <Content Include="Template\public\vendors\leaflet.markercluster\MarkerCluster.Default.css" />
+    <Content Include="Template\public\vendors\leaflet.tilelayer.colorfilter\leaflet-tilelayer-colorfilter.min.js" />
+    <Content Include="Template\public\vendors\leaflet\leaflet.css" />
+    <Content Include="Template\public\vendors\leaflet\leaflet.js" />
+    <Content Include="Template\public\vendors\list.js\list.min.js" />
+    <Content Include="Template\public\vendors\lodash\lodash.min.js" />
+    <Content Include="Template\public\vendors\lottie\lottie.min.js" />
+    <Content Include="Template\public\vendors\overlayscrollbars\OverlayScrollbars.min.css" />
+    <Content Include="Template\public\vendors\overlayscrollbars\OverlayScrollbars.min.js" />
+    <Content Include="Template\public\vendors\plyr\plyr.css" />
+    <Content Include="Template\public\vendors\plyr\plyr.polyfilled.min.js" />
+    <Content Include="Template\public\vendors\popper\popper.min.js" />
+    <Content Include="Template\public\vendors\prism\prism-okaidia.css" />
+    <Content Include="Template\public\vendors\prism\prism.js" />
+    <Content Include="Template\public\vendors\rater-js\index.js" />
+    <Content Include="Template\public\vendors\rater-js\rater-js.js" />
+    <Content Include="Template\public\vendors\rater-js\star_0.svg" />
+    <Content Include="Template\public\vendors\rater-js\star_1.svg" />
+    <Content Include="Template\public\vendors\rater-js\style.css" />
+    <Content Include="Template\public\vendors\simplebar\simplebar.min.css" />
+    <Content Include="Template\public\vendors\simplebar\simplebar.min.js" />
+    <Content Include="Template\public\vendors\sortablejs\sortable.min.js" />
+    <Content Include="Template\public\vendors\swiper\swiper-bundle.min.css" />
+    <Content Include="Template\public\vendors\swiper\swiper-bundle.min.js" />
+    <Content Include="Template\public\vendors\tinymce\icons\default\icons.js" />
+    <Content Include="Template\public\vendors\tinymce\icons\default\icons.min.js" />
+    <Content Include="Template\public\vendors\tinymce\icons\default\index.js" />
+    <Content Include="Template\public\vendors\tinymce\license.txt" />
+    <Content Include="Template\public\vendors\tinymce\models\dom\index.js" />
+    <Content Include="Template\public\vendors\tinymce\models\dom\model.js" />
+    <Content Include="Template\public\vendors\tinymce\models\dom\model.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\advlist\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\anchor\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autolink\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autoresize\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autosave\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\charmap\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\codesample\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\codesample\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\code\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\code\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\directionality\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\emoticons\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\fullscreen\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\help\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\help\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\image\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\image\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\importcss\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\insertdatetime\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\link\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\link\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\lists\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\lists\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\media\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\media\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\nonbreaking\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\pagebreak\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\preview\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\preview\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\quickbars\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\quickbars\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\save\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\save\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\searchreplace\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\table\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\table\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\template\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\template\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\visualblocks\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\visualchars\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\wordcount\index.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="Template\public\vendors\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\dark\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\default\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\default\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\document\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\document\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\tinymce-5-dark\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\tinymce-5-dark\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\tinymce-5\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\tinymce-5\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\writer\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide-dark\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide-dark\content.inline.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide-dark\skin.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide-dark\skin.shadowdom.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide\content.inline.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide\skin.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide\skin.shadowdom.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5-dark\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5-dark\content.inline.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5-dark\content.inline.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5-dark\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5-dark\skin.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5-dark\skin.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5\content.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5\content.inline.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5\content.inline.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5\content.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5\skin.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5\skin.min.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5\skin.shadowdom.css" />
+    <Content Include="Template\public\vendors\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
+    <Content Include="Template\public\vendors\tinymce\themes\silver\index.js" />
+    <Content Include="Template\public\vendors\tinymce\themes\silver\theme.js" />
+    <Content Include="Template\public\vendors\tinymce\themes\silver\theme.min.js" />
+    <Content Include="Template\public\vendors\tinymce\tinymce.js" />
+    <Content Include="Template\public\vendors\tinymce\tinymce.min.js" />
+    <Content Include="Template\public\vendors\typed.js\typed.js" />
+    <Content Include="Template\public\widgets.html" />
+    <Content Include="Template\src\js\config.js" />
+    <Content Include="Template\src\js\docs.js" />
+    <Content Include="Template\src\js\pages\calendar.js" />
+    <Content Include="Template\src\js\pages\crm-analytics.js" />
+    <Content Include="Template\src\js\pages\crm-dashboard.js" />
+    <Content Include="Template\src\js\pages\ecommerce-dashboard.js" />
+    <Content Include="Template\src\js\pages\project-details.js" />
+    <Content Include="Template\src\js\pages\projectmanagement-dashboard.js" />
+    <Content Include="Template\src\js\pages\showcase.js" />
+    <Content Include="Template\src\js\phoenix.js" />
+    <Content Include="Template\src\js\theme\2fa-verification.js" />
+    <Content Include="Template\src\js\theme\advance-ajax-table.js" />
+    <Content Include="Template\src\js\theme\anchor.js" />
+    <Content Include="Template\src\js\theme\bigPicture.js" />
+    <Content Include="Template\src\js\theme\bulk-select.js" />
+    <Content Include="Template\src\js\theme\calendar\app-calendar.js" />
+    <Content Include="Template\src\js\theme\calendar\events.js" />
+    <Content Include="Template\src\js\theme\calendar\template.js" />
+    <Content Include="Template\src\js\theme\charts\chartjs\chartjs-utils.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\basic-echarts.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\call-campaign-reports.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\completed-task-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\contacts-by-source-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\contacts-created-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\crm-add-clicks.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\crm-lead-conversion.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\crm-new-leads.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\crm-new-users.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\crm-revenue-target.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\echarts-example.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\echarts-utils.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\email-campaign-report.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\area-line-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\area-pieces-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\bar-gradient-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\bar-line-mixed-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\bar-negative-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\bar-race-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\bar-timeline-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\bar-waterfall-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\basic-bar-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\basic-candlestick-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\basic-gauge-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\basic-line-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\basic-scatter-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\bubble-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\candlestick-mixed-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\doughnut-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\doughnut-rounded-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\dynamic-line-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\gauge-grade-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\gauge-multi-ring-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\gauge-multi-title-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\gauge-progress-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\gauge-ring-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\heatmap-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\heatmap-single-series-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\horizontal-bar-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\line-gradient-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\line-log-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\line-marker-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\map-usa.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\pie-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\pie-edge-align-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\pie-label-align-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\pie-multiple-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\quartet-scatter-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\radar-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\radar-customized-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\radar-multiple-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\series-bar-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\session-by-country-map.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\share-dataset-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\single-axis-scatter-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\stacked-area-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\stacked-bar-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\stacked-horizontal-bar-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\stacked-line-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\examples\step-line-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\issues-discovered-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\new-customers.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\paying-customer-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\projection-vs-actual-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\reports-details-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\returning-customer-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\sales-trends-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\social-marketing-radar-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\top-coupons-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\total-orders-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\total-sales-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\zero-burnout-chart.js" />
+    <Content Include="Template\src\js\theme\charts\echarts\zero-rodamap-chart.js" />
+    <Content Include="Template\src\js\theme\chat.js" />
+    <Content Include="Template\src\js\theme\choices.js" />
+    <Content Include="Template\src\js\theme\copyLink.js" />
+    <Content Include="Template\src\js\theme\countUp.js" />
+    <Content Include="Template\src\js\theme\create-board.js" />
+    <Content Include="Template\src\js\theme\data.js" />
+    <Content Include="Template\src\js\theme\detector.js" />
+    <Content Include="Template\src\js\theme\dropdown-on-hover.js" />
+    <Content Include="Template\src\js\theme\dropzone.js" />
+    <Content Include="Template\src\js\theme\faq-tab.js" />
+    <Content Include="Template\src\js\theme\featherIcons.js" />
+    <Content Include="Template\src\js\theme\flatpickr.js" />
+    <Content Include="Template\src\js\theme\form-validation.js" />
+    <Content Include="Template\src\js\theme\fullcalendar.js" />
+    <Content Include="Template\src\js\theme\glightbox.js" />
+    <Content Include="Template\src\js\theme\googleMap.js" />
+    <Content Include="Template\src\js\theme\icons.js" />
+    <Content Include="Template\src\js\theme\isotope.js" />
+    <Content Include="Template\src\js\theme\kanban.js" />
+    <Content Include="Template\src\js\theme\leaflet-top-regions.js" />
+    <Content Include="Template\src\js\theme\list.js" />
+    <Content Include="Template\src\js\theme\lottie.js" />
+    <Content Include="Template\src\js\theme\modal.js" />
+    <Content Include="Template\src\js\theme\navbar-combo.js" />
+    <Content Include="Template\src\js\theme\navbar-shadow-on-scroll.js" />
+    <Content Include="Template\src\js\theme\navbar-soft-on-scroll.js" />
+    <Content Include="Template\src\js\theme\navbar-vertical.js" />
+    <Content Include="Template\src\js\theme\node.js" />
+    <Content Include="Template\src\js\theme\phoenix-offcanvas.js" />
+    <Content Include="Template\src\js\theme\picmo.js" />
+    <Content Include="Template\src\js\theme\popover.js" />
+    <Content Include="Template\src\js\theme\product-details.js" />
+    <Content Include="Template\src\js\theme\quantity.js" />
+    <Content Include="Template\src\js\theme\randomColor.js" />
+    <Content Include="Template\src\js\theme\rater.js" />
+    <Content Include="Template\src\js\theme\responsiveNavItems.js" />
+    <Content Include="Template\src\js\theme\revenue-map.js" />
+    <Content Include="Template\src\js\theme\search.js" />
+    <Content Include="Template\src\js\theme\showcase-parallax.js" />
+    <Content Include="Template\src\js\theme\simplabar.js" />
+    <Content Include="Template\src\js\theme\sortable.js" />
+    <Content Include="Template\src\js\theme\stop-propagation.js" />
+    <Content Include="Template\src\js\theme\support-chat.js" />
+    <Content Include="Template\src\js\theme\swiper.js" />
+    <Content Include="Template\src\js\theme\theme-control.js" />
+    <Content Include="Template\src\js\theme\tinymce.js" />
+    <Content Include="Template\src\js\theme\toast.js" />
+    <Content Include="Template\src\js\theme\todoOffCanvas.js" />
+    <Content Include="Template\src\js\theme\tooltip.js" />
+    <Content Include="Template\src\js\theme\wizard.js" />
+    <Content Include="Template\src\js\utils.js" />
+    <Content Include="Template\src\scss\theme\plugins\prism.css" />
+    <Content Include="Template\src\scss\theme\test.svg" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveApplication.aspx.cs">
+      <DependentUpon>LeaveApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeaveApplication.aspx.designer.cs">
+      <DependentUpon>LeaveApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Template\public\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\public\test\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\public\test\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\public\test\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\public\test\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Site2.Master" />
+    <Content Include="Template\.babelrc" />
+    <Content Include="Template\.eslintignore" />
+    <Content Include="Template\.eslintrc.json" />
+    <Content Include="Template\.npmrc" />
+    <Content Include="Template\.prettierrc" />
+    <Content Include="Template\gulp\gulp.json" />
+    <Content Include="Template\jsconfig.json" />
+    <Content Include="Template\package-lock.json" />
+    <Content Include="Template\package.json" />
+    <Content Include="Template\public\assets\css\theme-rtl.css.map" />
+    <Content Include="Template\public\assets\css\theme-rtl.min.css.map" />
+    <Content Include="Template\public\assets\css\theme.css.map" />
+    <Content Include="Template\public\assets\css\theme.min.css.map" />
+    <Content Include="Template\public\assets\css\user-rtl.css.map" />
+    <Content Include="Template\public\assets\css\user-rtl.min.css.map" />
+    <Content Include="Template\public\assets\css\user.css.map" />
+    <Content Include="Template\public\assets\css\user.min.css.map" />
+    <Content Include="Template\public\assets\img\animated-icons\rotating-earth-dark.json" />
+    <Content Include="Template\public\assets\img\animated-icons\rotating-earth.json" />
+    <Content Include="Template\public\assets\img\animated-icons\typing.json" />
+    <Content Include="Template\public\assets\img\animated-icons\typing2.json" />
+    <Content Include="Template\public\assets\img\favicons\manifest.json" />
+    <Content Include="Template\public\assets\img\favicons\site.webmanifest" />
+    <Content Include="Template\public\assets\img\nav-icons\behance-1 1 %281%29.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\behance.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\bitbucket-icon 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\bitbucket.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\figma-1 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\figma.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\github.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\Gitlab-icon-rgb_2022 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\gitlab.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\google-cloud-1 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\google-cloud.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\google-drive.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\google-maps-2020-icon 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\google-maps.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\google-photos-6 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\google-photos.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\In.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\linkedin.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\ln.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\new-logo-drive-google 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\pinterest-1 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\pinterest.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\slack-new-logo 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\slack.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\spotify-2 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\spotify.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\trello 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\trello.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\twitter-6 1.webp" />
+    <Content Include="Template\public\assets\img\nav-icons\twitter.webp" />
+    <Content Include="Template\public\assets\img\sections\1.webp" />
+    <Content Include="Template\public\assets\img\sections\10.webp" />
+    <Content Include="Template\public\assets\img\sections\11.webp" />
+    <Content Include="Template\public\assets\img\sections\12.webp" />
+    <Content Include="Template\public\assets\img\sections\13.webp" />
+    <Content Include="Template\public\assets\img\sections\14.webp" />
+    <Content Include="Template\public\assets\img\sections\15.webp" />
+    <Content Include="Template\public\assets\img\sections\16.webp" />
+    <Content Include="Template\public\assets\img\sections\2.webp" />
+    <Content Include="Template\public\assets\img\sections\21.webp" />
+    <Content Include="Template\public\assets\img\sections\22.webp" />
+    <Content Include="Template\public\assets\img\sections\23.webp" />
+    <Content Include="Template\public\assets\img\sections\24.webp" />
+    <Content Include="Template\public\assets\img\sections\25.webp" />
+    <Content Include="Template\public\assets\img\sections\26.webp" />
+    <Content Include="Template\public\assets\img\sections\3.webp" />
+    <Content Include="Template\public\assets\img\sections\4.webp" />
+    <Content Include="Template\public\assets\img\sections\5.webp" />
+    <Content Include="Template\public\assets\img\sections\6.webp" />
+    <Content Include="Template\public\assets\img\sections\63.webp" />
+    <Content Include="Template\public\assets\img\sections\64.webp" />
+    <Content Include="Template\public\assets\img\sections\65.webp" />
+    <Content Include="Template\public\assets\img\sections\66.webp" />
+    <Content Include="Template\public\assets\img\sections\7.webp" />
+    <Content Include="Template\public\assets\img\sections\8.webp" />
+    <Content Include="Template\public\assets\img\sections\9.webp" />
+    <Content Include="Template\public\assets\img\sections\combo-nav.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-1.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-2.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-4.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-5.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-6.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-7.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-8.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-9-thumb.webp" />
+    <Content Include="Template\public\assets\img\sections\demo-9.webp" />
+    <Content Include="Template\public\assets\img\sections\demo.webp" />
+    <Content Include="Template\public\assets\img\sections\dual-nav-main.webp" />
+    <Content Include="Template\public\assets\img\sections\dual-nav.webp" />
+    <Content Include="Template\public\assets\img\sections\horizontal-slim.webp" />
+    <Content Include="Template\public\assets\img\sections\kanban.webp" />
+    <Content Include="Template\public\assets\img\sections\sidenav-collapse.webp" />
+    <Content Include="Template\public\assets\img\sections\sidenav-dark.webp" />
+    <Content Include="Template\public\assets\img\sections\topnav-double.webp" />
+    <Content Include="Template\public\assets\img\sections\topnav-only.webp" />
+    <Content Include="Template\public\assets\img\sections\topnav-slim-combo.webp" />
+    <Content Include="Template\public\assets\img\sections\vertical-sidenav.webp" />
+    <Content Include="Template\public\assets\img\spot-illustrations\33-s.webp" />
+    <Content Include="Template\public\assets\img\spot-illustrations\38.webp" />
+    <Content Include="Template\public\assets\img\spot-illustrations\dark_38.webp" />
+    <Content Include="Template\public\assets\img\team\1.webp" />
+    <Content Include="Template\public\assets\img\team\10.webp" />
+    <Content Include="Template\public\assets\img\team\11.webp" />
+    <Content Include="Template\public\assets\img\team\12.webp" />
+    <Content Include="Template\public\assets\img\team\13.webp" />
+    <Content Include="Template\public\assets\img\team\14.webp" />
+    <Content Include="Template\public\assets\img\team\15.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\1.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\10.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\11.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\12.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\13.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\14.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\15.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\16.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\17.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\18.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\19.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\2.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\20.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\21.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\22.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\23.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\24.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\25.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\26.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\27.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\28.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\29.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\3.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\30.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\31.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\32.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\33.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\34.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\36.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\4.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\5.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\57.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\58.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\59.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\6.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\60.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\61.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\62.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\63.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\64.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\65.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\66.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\67.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\68.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\69.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\7.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\8.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\9.webp" />
+    <Content Include="Template\public\assets\img\team\150x150\avatar.webp" />
+    <Content Include="Template\public\assets\img\team\16.webp" />
+    <Content Include="Template\public\assets\img\team\17.webp" />
+    <Content Include="Template\public\assets\img\team\18.webp" />
+    <Content Include="Template\public\assets\img\team\19.webp" />
+    <Content Include="Template\public\assets\img\team\2.webp" />
+    <Content Include="Template\public\assets\img\team\20.webp" />
+    <Content Include="Template\public\assets\img\team\21.webp" />
+    <Content Include="Template\public\assets\img\team\22.webp" />
+    <Content Include="Template\public\assets\img\team\23.webp" />
+    <Content Include="Template\public\assets\img\team\24.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\1.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\10.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\11.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\12.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\13.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\14.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\15.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\16.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\17.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\18.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\19.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\2.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\20.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\21.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\22.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\23.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\24.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\25.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\26.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\27.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\28.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\29.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\3.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\30.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\31.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\32.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\33.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\34.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\36.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\4.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\5.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\57.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\58.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\59.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\6.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\60.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\61.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\62.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\63.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\64.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\65.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\66.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\67.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\68.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\69.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\7.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\8.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\9.webp" />
+    <Content Include="Template\public\assets\img\team\24x24\avatar.webp" />
+    <Content Include="Template\public\assets\img\team\25.webp" />
+    <Content Include="Template\public\assets\img\team\26.webp" />
+    <Content Include="Template\public\assets\img\team\27.webp" />
+    <Content Include="Template\public\assets\img\team\28.webp" />
+    <Content Include="Template\public\assets\img\team\29.webp" />
+    <Content Include="Template\public\assets\img\team\3.webp" />
+    <Content Include="Template\public\assets\img\team\30.webp" />
+    <Content Include="Template\public\assets\img\team\31.webp" />
+    <Content Include="Template\public\assets\img\team\32.webp" />
+    <Content Include="Template\public\assets\img\team\33.webp" />
+    <Content Include="Template\public\assets\img\team\34.webp" />
+    <Content Include="Template\public\assets\img\team\35.webp" />
+    <Content Include="Template\public\assets\img\team\4.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\1.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\10.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\11.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\12.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\13.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\14.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\15.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\16.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\17.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\18.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\19.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\2.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\20.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\21.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\22.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\23.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\24.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\25.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\26.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\27.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\28.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\29.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\3.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\30.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\31.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\32.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\33.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\34.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\36.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\4.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\5.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\57.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\58.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\59.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\6.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\60.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\61.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\62.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\63.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\64.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\65.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\66.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\67.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\68.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\69.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\7.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\8.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\9.webp" />
+    <Content Include="Template\public\assets\img\team\40x40\avatar.webp" />
+    <Content Include="Template\public\assets\img\team\5.webp" />
+    <Content Include="Template\public\assets\img\team\57.webp" />
+    <Content Include="Template\public\assets\img\team\58.webp" />
+    <Content Include="Template\public\assets\img\team\59.webp" />
+    <Content Include="Template\public\assets\img\team\6.webp" />
+    <Content Include="Template\public\assets\img\team\60.webp" />
+    <Content Include="Template\public\assets\img\team\61.webp" />
+    <Content Include="Template\public\assets\img\team\62.webp" />
+    <Content Include="Template\public\assets\img\team\63.webp" />
+    <Content Include="Template\public\assets\img\team\64.webp" />
+    <Content Include="Template\public\assets\img\team\65.webp" />
+    <Content Include="Template\public\assets\img\team\66.webp" />
+    <Content Include="Template\public\assets\img\team\67.webp" />
+    <Content Include="Template\public\assets\img\team\68.webp" />
+    <Content Include="Template\public\assets\img\team\69.webp" />
+    <Content Include="Template\public\assets\img\team\7.webp" />
+    <Content Include="Template\public\assets\img\team\70.webp" />
+    <Content Include="Template\public\assets\img\team\71.webp" />
+    <Content Include="Template\public\assets\img\team\72.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\1.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\10.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\11.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\12.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\13.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\14.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\15.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\16.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\17.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\18.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\19.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\2.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\20.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\21.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\22.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\23.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\24.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\25.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\26.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\27.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\28.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\29.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\3.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\30.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\31.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\32.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\33.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\34.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\36.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\4.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\5.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\57.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\58.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\59.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\6.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\60.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\61.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\62.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\63.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\64.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\65.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\66.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\67.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\68.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\69.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\7.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\8.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\9.webp" />
+    <Content Include="Template\public\assets\img\team\72x72\avatar.webp" />
+    <Content Include="Template\public\assets\img\team\73.webp" />
+    <Content Include="Template\public\assets\img\team\74.webp" />
+    <Content Include="Template\public\assets\img\team\75.webp" />
+    <Content Include="Template\public\assets\img\team\76.webp" />
+    <Content Include="Template\public\assets\img\team\8.webp" />
+    <Content Include="Template\public\assets\img\team\9.webp" />
+    <Content Include="Template\public\assets\img\team\avatar-placeholder.webp" />
+    <Content Include="Template\public\assets\img\team\avatar-rounded.webp" />
+    <Content Include="Template\public\assets\img\team\avatar.webp" />
+    <Content Include="Template\public\assets\img\team\empty-thumb.webp" />
+    <Content Include="Template\public\assets\img\team\r.webp" />
+    <Content Include="Template\public\assets\js\calendar.js.map" />
+    <Content Include="Template\public\assets\js\config.js.map" />
+    <Content Include="Template\public\assets\js\crm-analytics.js.map" />
+    <Content Include="Template\public\assets\js\crm-dashboard.js.map" />
+    <Content Include="Template\public\assets\js\echarts-example.js.map" />
+    <Content Include="Template\public\assets\js\ecommerce-dashboard.js.map" />
+    <Content Include="Template\public\assets\js\phoenix.js.map" />
+    <Content Include="Template\public\assets\js\project-details.js.map" />
+    <Content Include="Template\public\assets\js\projectmanagement-dashboard.js.map" />
+    <Content Include="Template\public\assets\js\showcase.js.map" />
+    <Content Include="Template\public\Site.Master" />
+    <Content Include="Template\public\vendors\bootstrap\bootstrap.min.js.map" />
+    <Content Include="Template\public\vendors\feather-icons\feather.min.js.map" />
+    <Content Include="Template\public\vendors\leaflet.markercluster\leaflet.markercluster.js.map" />
+    <Content Include="Template\public\vendors\leaflet\leaflet.js.map" />
+    <Content Include="Template\public\vendors\list.js\list.min.js.map" />
+    <Content Include="Template\public\vendors\plyr\plyr.polyfilled.min.js.map" />
+    <Content Include="Template\public\vendors\popper\popper.min.js.map" />
+    <Content Include="Template\public\vendors\tinymce\bower.json" />
+    <Content Include="Template\public\vendors\tinymce\CHANGELOG.md" />
+    <Content Include="Template\public\vendors\tinymce\composer.json" />
+    <Content Include="Template\public\vendors\tinymce\package.json" />
+    <Content Include="Template\public\vendors\tinymce\README.md" />
+    <Content Include="Template\README.md" />
+    <Content Include="Template\src\pug\apps\calendar.pug" />
+    <Content Include="Template\src\pug\apps\chat.pug" />
+    <Content Include="Template\src\pug\apps\crm\add-contact.pug" />
+    <Content Include="Template\src\pug\apps\crm\analytics.pug" />
+    <Content Include="Template\src\pug\apps\crm\deal-details.pug" />
+    <Content Include="Template\src\pug\apps\crm\deals.pug" />
+    <Content Include="Template\src\pug\apps\crm\lead-details.pug" />
+    <Content Include="Template\src\pug\apps\crm\leads.pug" />
+    <Content Include="Template\src\pug\apps\crm\reports-details.pug" />
+    <Content Include="Template\src\pug\apps\crm\reports.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\admin\add-product.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\admin\customer-details.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\admin\customers.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\admin\order-details.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\admin\orders.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\admin\products.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\admin\refund.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\cart.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\checkout.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\favourite-stores.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\homepage.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\invoice.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\order-tracking.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\product-details.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\products-filter.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\profile.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\shipping-info.pug" />
+    <Content Include="Template\src\pug\apps\e-commerce\landing\wishlist.pug" />
+    <Content Include="Template\src\pug\apps\email\compose.pug" />
+    <Content Include="Template\src\pug\apps\email\email-detail.pug" />
+    <Content Include="Template\src\pug\apps\email\inbox.pug" />
+    <Content Include="Template\src\pug\apps\events\create-an-event.pug" />
+    <Content Include="Template\src\pug\apps\events\event-detail.pug" />
+    <Content Include="Template\src\pug\apps\kanban\boards.pug" />
+    <Content Include="Template\src\pug\apps\kanban\create-kanban-board.pug" />
+    <Content Include="Template\src\pug\apps\kanban\kanban.pug" />
+    <Content Include="Template\src\pug\apps\project-management\create-new.pug" />
+    <Content Include="Template\src\pug\apps\project-management\project-board-view.pug" />
+    <Content Include="Template\src\pug\apps\project-management\project-card-view.pug" />
+    <Content Include="Template\src\pug\apps\project-management\project-details.pug" />
+    <Content Include="Template\src\pug\apps\project-management\project-list-view.pug" />
+    <Content Include="Template\src\pug\apps\project-management\todo-list.pug" />
+    <Content Include="Template\src\pug\apps\social\feed.pug" />
+    <Content Include="Template\src\pug\apps\social\profile.pug" />
+    <Content Include="Template\src\pug\apps\social\settings.pug" />
+    <Content Include="Template\src\pug\changelog.pug" />
+    <Content Include="Template\src\pug\dashboard\crm.pug" />
+    <Content Include="Template\src\pug\dashboard\project-management.pug" />
+    <Content Include="Template\src\pug\demo\combo-nav-slim.pug" />
+    <Content Include="Template\src\pug\demo\combo-nav.pug" />
+    <Content Include="Template\src\pug\demo\dark-mode.pug" />
+    <Content Include="Template\src\pug\demo\darknav.pug" />
+    <Content Include="Template\src\pug\demo\dual-nav.pug" />
+    <Content Include="Template\src\pug\demo\horizontal-slim.pug" />
+    <Content Include="Template\src\pug\demo\navbar-top-slim.pug" />
+    <Content Include="Template\src\pug\demo\navbar-top.pug" />
+    <Content Include="Template\src\pug\demo\sidenav-collapse.pug" />
+    <Content Include="Template\src\pug\demo\topnav-slim.pug" />
+    <Content Include="Template\src\pug\demo\vertical-sidenav.pug" />
+    <Content Include="Template\src\pug\documentation\customization\configuration.pug" />
+    <Content Include="Template\src\pug\documentation\customization\dark-mode.pug" />
+    <Content Include="Template\src\pug\documentation\customization\plugin.pug" />
+    <Content Include="Template\src\pug\documentation\customization\styling.pug" />
+    <Content Include="Template\src\pug\documentation\design-file.pug" />
+    <Content Include="Template\src\pug\documentation\getting-started.pug" />
+    <Content Include="Template\src\pug\documentation\gulp.pug" />
+    <Content Include="Template\src\pug\documentation\layouts\combo-navbar.pug" />
+    <Content Include="Template\src\pug\documentation\layouts\dual-nav.pug" />
+    <Content Include="Template\src\pug\documentation\layouts\horizontal-navbar.pug" />
+    <Content Include="Template\src\pug\documentation\layouts\vertical-navbar.pug" />
+    <Content Include="Template\src\pug\index.pug" />
+    <Content Include="Template\src\pug\layouts\Layout.pug" />
+    <Content Include="Template\src\pug\layouts\LayoutCardAuth.pug" />
+    <Content Include="Template\src\pug\layouts\LayoutComponent.pug" />
+    <Content Include="Template\src\pug\layouts\LayoutEcommerce.pug" />
+    <Content Include="Template\src\pug\layouts\LayoutEmail.pug" />
+    <Content Include="Template\src\pug\layouts\LayoutShowcase.pug" />
+    <Content Include="Template\src\pug\layouts\LayoutSimpleAuth.pug" />
+    <Content Include="Template\src\pug\layouts\LayoutSplitAuth.pug" />
+    <Content Include="Template\src\pug\layouts\LayoutTheme.pug" />
+    <Content Include="Template\src\pug\mixins\authentication\SocialButtons.pug" />
+    <Content Include="Template\src\pug\mixins\calendar\Mixins.pug" />
+    <Content Include="Template\src\pug\mixins\chat\ChatContent.pug" />
+    <Content Include="Template\src\pug\mixins\chat\ChatData.pug" />
+    <Content Include="Template\src\pug\mixins\chat\ChatSidebar.pug" />
+    <Content Include="Template\src\pug\mixins\chat\ChatThreadDetails.pug" />
+    <Content Include="Template\src\pug\mixins\common\Avatar.pug" />
+    <Content Include="Template\src\pug\mixins\common\Card.pug" />
+    <Content Include="Template\src\pug\mixins\common\CopyNotificationToast.pug" />
+    <Content Include="Template\src\pug\mixins\common\Footer.pug" />
+    <Content Include="Template\src\pug\mixins\common\Form.pug" />
+    <Content Include="Template\src\pug\mixins\common\Logo.pug" />
+    <Content Include="Template\src\pug\mixins\common\PageHeader.pug" />
+    <Content Include="Template\src\pug\mixins\common\Rating.pug" />
+    <Content Include="Template\src\pug\mixins\common\RevealBtn.pug" />
+    <Content Include="Template\src\pug\mixins\common\SettingsPanel.pug" />
+    <Content Include="Template\src\pug\mixins\common\SupportChat.pug" />
+    <Content Include="Template\src\pug\mixins\components\Badge.pug" />
+    <Content Include="Template\src\pug\mixins\components\Button.pug" />
+    <Content Include="Template\src\pug\mixins\components\Card.pug" />
+    <Content Include="Template\src\pug\mixins\components\Carousel.pug" />
+    <Content Include="Template\src\pug\mixins\components\Collapse.pug" />
+    <Content Include="Template\src\pug\mixins\components\Dropdown.pug" />
+    <Content Include="Template\src\pug\mixins\components\ListGroup.pug" />
+    <Content Include="Template\src\pug\mixins\components\OffCanvas.pug" />
+    <Content Include="Template\src\pug\mixins\components\Pagination.pug" />
+    <Content Include="Template\src\pug\mixins\components\Placeholder.pug" />
+    <Content Include="Template\src\pug\mixins\components\Popovers.pug" />
+    <Content Include="Template\src\pug\mixins\components\Scrollspy.pug" />
+    <Content Include="Template\src\pug\mixins\components\Spinners.pug" />
+    <Content Include="Template\src\pug\mixins\components\Toast.pug" />
+    <Content Include="Template\src\pug\mixins\components\Tooltips.pug" />
+    <Content Include="Template\src\pug\mixins\core\Background.pug" />
+    <Content Include="Template\src\pug\mixins\core\Functions.pug" />
+    <Content Include="Template\src\pug\mixins\core\Section.pug" />
+    <Content Include="Template\src\pug\mixins\core\ThemeStyle.pug" />
+    <Content Include="Template\src\pug\mixins\crm\Analytics.pug" />
+    <Content Include="Template\src\pug\mixins\crm\DealDetails.pug" />
+    <Content Include="Template\src\pug\mixins\crm\Deals.pug" />
+    <Content Include="Template\src\pug\mixins\crm\LeadDetails.pug" />
+    <Content Include="Template\src\pug\mixins\crm\LeadsTable.pug" />
+    <Content Include="Template\src\pug\mixins\crm\Reports.pug" />
+    <Content Include="Template\src\pug\mixins\crm\ReportsDetails.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\common.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\CRM\Crm.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\CRM\CrmStats.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\CRM\NewUserList.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\e-commerce\EcomCharts.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\e-commerce\LatestReviews.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\e-commerce\StatCard.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\e-commerce\Stats.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\e-commerce\TopRegions.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\e-commerce\TotalSalesChart.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\project-management\ElevenProgressChart.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\project-management\FlyCard.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\project-management\IssueChart.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\project-management\ProjectSummery.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\project-management\RecentActivity.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\project-management\Stats.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\project-management\ToDo.pug" />
+    <Content Include="Template\src\pug\mixins\dashboard\project-management\ZeroRoadmap.pug" />
+    <Content Include="Template\src\pug\mixins\documentation\Plugin.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\add-product\DisplayImage.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\add-product\OrganizeCard.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\add-product\Pricing.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\add-product\ProductDescription.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\add-product\VariantCard.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\cart\CartTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\cart\SummaryCard.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\checkout\Checkout.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\checkout\CheckoutSummaryCard.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\customer-details\CustomerCards.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\customer-details\CustomerOrdersTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\customer-details\CustomerRatingsTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\customer-details\CustomerWishlistTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\CustomersTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\homepage\BestOffers.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\homepage\Category.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\homepage\common.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\homepage\Cta.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\homepage\Footer.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\homepage\TopDeals.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\homepage\TopElectronics.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\invoice\InvoiceDetails.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\invoice\InvoiceTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\Navbar.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\order-details\OrderDetailsCards.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\order-details\OrderTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\OrderTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\product-details\Details.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\product-details\ProductDetailsCard.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\product-details\Reviews.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\product-details\SimilarProducts.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\ProductsTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\profile\PersonalInfo.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\profile\ProfileCards.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\profile\ProfileOrderTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\profile\ProfileReviewTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\profile\ProfileStores.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\profile\ProfileWishListTable.pug" />
+    <Content Include="Template\src\pug\mixins\e-commerce\Topbar.pug" />
+    <Content Include="Template\src\pug\mixins\email\Common.pug" />
+    <Content Include="Template\src\pug\mixins\email\Compose.pug" />
+    <Content Include="Template\src\pug\mixins\email\EmailDetails.pug" />
+    <Content Include="Template\src\pug\mixins\events\CreateEvent.pug" />
+    <Content Include="Template\src\pug\mixins\events\EventDetail.pug" />
+    <Content Include="Template\src\pug\mixins\forms\basic\FormsLayout.pug" />
+    <Content Include="Template\src\pug\mixins\icons\IconCards.pug" />
+    <Content Include="Template\src\pug\mixins\kanban\KanbanCreateBoard.pug" />
+    <Content Include="Template\src\pug\mixins\kanban\KanbanWizardForm.pug" />
+    <Content Include="Template\src\pug\mixins\kanban\kanban\KanbanHeader.pug" />
+    <Content Include="Template\src\pug\mixins\kanban\kanban\KanbanModal.pug" />
+    <Content Include="Template\src\pug\mixins\kanban\kanban\KanbanOffcanvas.pug" />
+    <Content Include="Template\src\pug\mixins\landing\common\Navbar.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Address.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Blog.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Brands.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Cta.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Features.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Footer.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\FunFacts.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Gallery.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\HeroHeader.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Pricing.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Team.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-1\Testimonial.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Blogs.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Brands.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Contact.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Cta.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Features.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Footer.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\FunFacts.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Gallery.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\HeroHeader.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Pricing.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Stats.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Team.pug" />
+    <Content Include="Template\src\pug\mixins\landing\landing-2\Testimonial.pug" />
+    <Content Include="Template\src\pug\mixins\layouts\LayoutContent.pug" />
+    <Content Include="Template\src\pug\mixins\layouts\LayoutContentProd.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\Mixins.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\NavbarBottom.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\NavbarCombo.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\NavbarShowcase.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\NavbarStandard.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\NavbarTop.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\NavbarVertical.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\NotificationDropdown.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\Search.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\ToggleThemeBtn.pug" />
+    <Content Include="Template\src\pug\mixins\navbars\TopNav.pug" />
+    <Content Include="Template\src\pug\mixins\pages\members\MembersTable.pug" />
+    <Content Include="Template\src\pug\mixins\pages\pricing\PricingGrid.pug" />
+    <Content Include="Template\src\pug\mixins\project-management\Common.pug" />
+    <Content Include="Template\src\pug\mixins\project-management\ProjectBoardView.pug" />
+    <Content Include="Template\src\pug\mixins\project-management\ProjectCardView.pug" />
+    <Content Include="Template\src\pug\mixins\project-management\ProjectDetails.pug" />
+    <Content Include="Template\src\pug\mixins\project-management\ProjectDetailsModal.pug" />
+    <Content Include="Template\src\pug\mixins\project-management\ProjectDetailsTodo.pug" />
+    <Content Include="Template\src\pug\mixins\project-management\ProjectListView.pug" />
+    <Content Include="Template\src\pug\mixins\project-management\ToDoList.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\AdvancedForms.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\Cta.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\Demos.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\EssentialFeatures.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\Faq.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\Feature.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\FeatureFigma.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\Header.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\ImportantApplications.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\NecessaryPages.pug" />
+    <Content Include="Template\src\pug\mixins\showcase\Prefooter.pug" />
+    <Content Include="Template\src\pug\mixins\social\Feed.pug" />
+    <Content Include="Template\src\pug\mixins\social\Profile.pug" />
+    <Content Include="Template\src\pug\mixins\social\Settings.pug" />
+    <Content Include="Template\src\pug\mixins\tables\Tables.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Backgrounds.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Borders.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Clearfix.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\ColoredLinks.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Colors.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Display.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Embed.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Flex.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Float.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Grid.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Interactions.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Opacity.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Overflow.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Position.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Shadows.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Sizing.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Spacing.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Stacks.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\StretchedLink.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Text.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\TextTrunCation.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Typography.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\VerticalAlign.pug" />
+    <Content Include="Template\src\pug\mixins\utilities\Visibility.pug" />
+    <Content Include="Template\src\pug\mixins\Variables.pug" />
+    <Content Include="Template\src\pug\mixins\widgets\ECommerce.pug" />
+    <Content Include="Template\src\pug\mixins\widgets\Forms.pug" />
+    <Content Include="Template\src\pug\mixins\widgets\Others.pug" />
+    <Content Include="Template\src\pug\mixins\widgets\Stats.pug" />
+    <Content Include="Template\src\pug\mixins\widgets\Tables.pug" />
+    <Content Include="Template\src\pug\mixins\widgets\Users.pug" />
+    <Content Include="Template\src\pug\mixins\widgets\WidgetNavbar.pug" />
+    <Content Include="Template\src\pug\mixins\widgets\WidgetSectionTitle.pug" />
+    <Content Include="Template\src\pug\mixins\wizard\WizardContent.pug" />
+    <Content Include="Template\src\pug\mixins\wizard\WizardForms.pug" />
+    <Content Include="Template\src\pug\mixins\wizard\WizardHeader.pug" />
+    <Content Include="Template\src\pug\mixins\wizard\WizardPager.pug" />
+    <Content Include="Template\src\pug\modules\components\accordion.pug" />
+    <Content Include="Template\src\pug\modules\components\alerts.pug" />
+    <Content Include="Template\src\pug\modules\components\avatar.pug" />
+    <Content Include="Template\src\pug\modules\components\badge.pug" />
+    <Content Include="Template\src\pug\modules\components\breadcrumb.pug" />
+    <Content Include="Template\src\pug\modules\components\button.pug" />
+    <Content Include="Template\src\pug\modules\components\calendar.pug" />
+    <Content Include="Template\src\pug\modules\components\card.pug" />
+    <Content Include="Template\src\pug\modules\components\carousel\bootstrap.pug" />
+    <Content Include="Template\src\pug\modules\components\carousel\swiper.pug" />
+    <Content Include="Template\src\pug\modules\components\chat-widget.pug" />
+    <Content Include="Template\src\pug\modules\components\collapse.pug" />
+    <Content Include="Template\src\pug\modules\components\dropdown.pug" />
+    <Content Include="Template\src\pug\modules\components\list-group.pug" />
+    <Content Include="Template\src\pug\modules\components\modal.pug" />
+    <Content Include="Template\src\pug\modules\components\navs-and-tabs\navbar.pug" />
+    <Content Include="Template\src\pug\modules\components\navs-and-tabs\navs.pug" />
+    <Content Include="Template\src\pug\modules\components\navs-and-tabs\tabs.pug" />
+    <Content Include="Template\src\pug\modules\components\offcanvas.pug" />
+    <Content Include="Template\src\pug\modules\components\pagination.pug" />
+    <Content Include="Template\src\pug\modules\components\placeholder.pug" />
+    <Content Include="Template\src\pug\modules\components\popovers.pug" />
+    <Content Include="Template\src\pug\modules\components\progress-bar.pug" />
+    <Content Include="Template\src\pug\modules\components\progress.pug" />
+    <Content Include="Template\src\pug\modules\components\scrollspy.pug" />
+    <Content Include="Template\src\pug\modules\components\sortable.pug" />
+    <Content Include="Template\src\pug\modules\components\spinners.pug" />
+    <Content Include="Template\src\pug\modules\components\toast.pug" />
+    <Content Include="Template\src\pug\modules\components\tooltips.pug" />
+    <Content Include="Template\src\pug\modules\echarts\bar-charts.pug" />
+    <Content Include="Template\src\pug\modules\echarts\candlestick-charts.pug" />
+    <Content Include="Template\src\pug\modules\echarts\gauge-chart.pug" />
+    <Content Include="Template\src\pug\modules\echarts\geo-map.pug" />
+    <Content Include="Template\src\pug\modules\echarts\heatmap-charts.pug" />
+    <Content Include="Template\src\pug\modules\echarts\how-to-use.pug" />
+    <Content Include="Template\src\pug\modules\echarts\line-charts.pug" />
+    <Content Include="Template\src\pug\modules\echarts\pie-charts.pug" />
+    <Content Include="Template\src\pug\modules\echarts\radar-charts.pug" />
+    <Content Include="Template\src\pug\modules\echarts\scatter-charts.pug" />
+    <Content Include="Template\src\pug\modules\forms\advance\advance-select.pug" />
+    <Content Include="Template\src\pug\modules\forms\advance\date-picker.pug" />
+    <Content Include="Template\src\pug\modules\forms\advance\editor.pug" />
+    <Content Include="Template\src\pug\modules\forms\advance\emoji-button.pug" />
+    <Content Include="Template\src\pug\modules\forms\advance\file-uploader.pug" />
+    <Content Include="Template\src\pug\modules\forms\advance\rating.pug" />
+    <Content Include="Template\src\pug\modules\forms\basic\checks.pug" />
+    <Content Include="Template\src\pug\modules\forms\basic\floating-labels.pug" />
+    <Content Include="Template\src\pug\modules\forms\basic\form-control.pug" />
+    <Content Include="Template\src\pug\modules\forms\basic\input-group.pug" />
+    <Content Include="Template\src\pug\modules\forms\basic\layout.pug" />
+    <Content Include="Template\src\pug\modules\forms\basic\range.pug" />
+    <Content Include="Template\src\pug\modules\forms\basic\select.pug" />
+    <Content Include="Template\src\pug\modules\forms\validation.pug" />
+    <Content Include="Template\src\pug\modules\forms\wizard.pug" />
+    <Content Include="Template\src\pug\modules\icons\feather.pug" />
+    <Content Include="Template\src\pug\modules\icons\font-awesome.pug" />
+    <Content Include="Template\src\pug\modules\icons\unicons.pug" />
+    <Content Include="Template\src\pug\modules\tables\advance-tables.pug" />
+    <Content Include="Template\src\pug\modules\tables\basic-tables.pug" />
+    <Content Include="Template\src\pug\modules\tables\bulk-select.pug" />
+    <Content Include="Template\src\pug\modules\utilities\background.pug" />
+    <Content Include="Template\src\pug\modules\utilities\borders.pug" />
+    <Content Include="Template\src\pug\modules\utilities\colors.pug" />
+    <Content Include="Template\src\pug\modules\utilities\display.pug" />
+    <Content Include="Template\src\pug\modules\utilities\flex.pug" />
+    <Content Include="Template\src\pug\modules\utilities\float.pug" />
+    <Content Include="Template\src\pug\modules\utilities\grid.pug" />
+    <Content Include="Template\src\pug\modules\utilities\interactions.pug" />
+    <Content Include="Template\src\pug\modules\utilities\opacity.pug" />
+    <Content Include="Template\src\pug\modules\utilities\overflow.pug" />
+    <Content Include="Template\src\pug\modules\utilities\position.pug" />
+    <Content Include="Template\src\pug\modules\utilities\shadows.pug" />
+    <Content Include="Template\src\pug\modules\utilities\sizing.pug" />
+    <Content Include="Template\src\pug\modules\utilities\spacing.pug" />
+    <Content Include="Template\src\pug\modules\utilities\stacks.pug" />
+    <Content Include="Template\src\pug\modules\utilities\typography.pug" />
+    <Content Include="Template\src\pug\modules\utilities\vertical-align.pug" />
+    <Content Include="Template\src\pug\modules\utilities\visibility.pug" />
+    <Content Include="Template\src\pug\pages\authentication\card\2FA.pug" />
+    <Content Include="Template\src\pug\pages\authentication\card\forgot-password.pug" />
+    <Content Include="Template\src\pug\pages\authentication\card\lock-screen.pug" />
+    <Content Include="Template\src\pug\pages\authentication\card\reset-password.pug" />
+    <Content Include="Template\src\pug\pages\authentication\card\sign-in.pug" />
+    <Content Include="Template\src\pug\pages\authentication\card\sign-out.pug" />
+    <Content Include="Template\src\pug\pages\authentication\card\sign-up.pug" />
+    <Content Include="Template\src\pug\pages\authentication\simple\2FA.pug" />
+    <Content Include="Template\src\pug\pages\authentication\simple\forgot-password.pug" />
+    <Content Include="Template\src\pug\pages\authentication\simple\lock-screen.pug" />
+    <Content Include="Template\src\pug\pages\authentication\simple\reset-password.pug" />
+    <Content Include="Template\src\pug\pages\authentication\simple\sign-in.pug" />
+    <Content Include="Template\src\pug\pages\authentication\simple\sign-out.pug" />
+    <Content Include="Template\src\pug\pages\authentication\simple\sign-up.pug" />
+    <Content Include="Template\src\pug\pages\authentication\split\2FA.pug" />
+    <Content Include="Template\src\pug\pages\authentication\split\forgot-password.pug" />
+    <Content Include="Template\src\pug\pages\authentication\split\lock-screen.pug" />
+    <Content Include="Template\src\pug\pages\authentication\split\reset-password.pug" />
+    <Content Include="Template\src\pug\pages\authentication\split\sign-in.pug" />
+    <Content Include="Template\src\pug\pages\authentication\split\sign-out.pug" />
+    <Content Include="Template\src\pug\pages\authentication\split\sign-up.pug" />
+    <Content Include="Template\src\pug\pages\errors\403.pug" />
+    <Content Include="Template\src\pug\pages\errors\404.pug" />
+    <Content Include="Template\src\pug\pages\errors\500.pug" />
+    <Content Include="Template\src\pug\pages\faq\faq-accordion.pug" />
+    <Content Include="Template\src\pug\pages\faq\faq-tab.pug" />
+    <Content Include="Template\src\pug\pages\landing\alternate.pug" />
+    <Content Include="Template\src\pug\pages\landing\default.pug" />
+    <Content Include="Template\src\pug\pages\members.pug" />
+    <Content Include="Template\src\pug\pages\notifications.pug" />
+    <Content Include="Template\src\pug\pages\pricing\pricing-column.pug" />
+    <Content Include="Template\src\pug\pages\pricing\pricing-grid.pug" />
+    <Content Include="Template\src\pug\pages\starter.pug" />
+    <Content Include="Template\src\pug\pages\timeline.pug" />
+    <Content Include="Template\src\pug\showcase.pug" />
+    <Content Include="Template\src\pug\widgets.pug" />
+    <Content Include="Template\src\scss\theme.scss" />
+    <Content Include="Template\src\scss\theme\helpers\_background.scss" />
+    <Content Include="Template\src\scss\theme\helpers\_borders.scss" />
+    <Content Include="Template\src\scss\theme\helpers\_colored-links.scss" />
+    <Content Include="Template\src\scss\theme\helpers\_flex.scss" />
+    <Content Include="Template\src\scss\theme\helpers\_position.scss" />
+    <Content Include="Template\src\scss\theme\helpers\_text.scss" />
+    <Content Include="Template\src\scss\theme\mixins\_buttons.scss" />
+    <Content Include="Template\src\scss\theme\mixins\_hover-focus.scss" />
+    <Content Include="Template\src\scss\theme\mixins\_navbar-vertical.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_choices.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_dropzone.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_flatpickr.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_google-map.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_isotope.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_leaflet.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_list.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_picmo.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_rater.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_swiper.scss" />
+    <Content Include="Template\src\scss\theme\plugins\_tinymce.scss" />
+    <Content Include="Template\src\scss\theme\root\_dark.scss" />
+    <Content Include="Template\src\scss\theme\root\_light.scss" />
+    <Content Include="Template\src\scss\theme\root\_override.scss" />
+    <Content Include="Template\src\scss\theme\_accordion.scss" />
+    <Content Include="Template\src\scss\theme\_alert.scss" />
+    <Content Include="Template\src\scss\theme\_auth-card.scss" />
+    <Content Include="Template\src\scss\theme\_avatar.scss" />
+    <Content Include="Template\src\scss\theme\_badges.scss" />
+    <Content Include="Template\src\scss\theme\_breadcrumb.scss" />
+    <Content Include="Template\src\scss\theme\_browser-support.scss" />
+    <Content Include="Template\src\scss\theme\_buttons.scss" />
+    <Content Include="Template\src\scss\theme\_calendar.scss" />
+    <Content Include="Template\src\scss\theme\_carousel.scss" />
+    <Content Include="Template\src\scss\theme\_chat.scss" />
+    <Content Include="Template\src\scss\theme\_colors.scss" />
+    <Content Include="Template\src\scss\theme\_container.scss" />
+    <Content Include="Template\src\scss\theme\_crm.scss" />
+    <Content Include="Template\src\scss\theme\_dashboard.scss" />
+    <Content Include="Template\src\scss\theme\_documentation.scss" />
+    <Content Include="Template\src\scss\theme\_dropdown.scss" />
+    <Content Include="Template\src\scss\theme\_ecommerce.scss" />
+    <Content Include="Template\src\scss\theme\_email.scss" />
+    <Content Include="Template\src\scss\theme\_events.scss" />
+    <Content Include="Template\src\scss\theme\_feed.scss" />
+    <Content Include="Template\src\scss\theme\_forms.scss" />
+    <Content Include="Template\src\scss\theme\_full-calendar.scss" />
+    <Content Include="Template\src\scss\theme\_functions.scss" />
+    <Content Include="Template\src\scss\theme\_gantt-chart.scss" />
+    <Content Include="Template\src\scss\theme\_helpers.scss" />
+    <Content Include="Template\src\scss\theme\_hover.scss" />
+    <Content Include="Template\src\scss\theme\_hoverbox.scss" />
+    <Content Include="Template\src\scss\theme\_icon.scss" />
+    <Content Include="Template\src\scss\theme\_indicator.scss" />
+    <Content Include="Template\src\scss\theme\_kanban.scss" />
+    <Content Include="Template\src\scss\theme\_landing.scss" />
+    <Content Include="Template\src\scss\theme\_list-group.scss" />
+    <Content Include="Template\src\scss\theme\_maps.scss" />
+    <Content Include="Template\src\scss\theme\_mixed.scss" />
+    <Content Include="Template\src\scss\theme\_mixins.scss" />
+    <Content Include="Template\src\scss\theme\_modal.scss" />
+    <Content Include="Template\src\scss\theme\_nav-tab.scss" />
+    <Content Include="Template\src\scss\theme\_navbar-bottom.scss" />
+    <Content Include="Template\src\scss\theme\_navbar-top-slim.scss" />
+    <Content Include="Template\src\scss\theme\_navbar-top.scss" />
+    <Content Include="Template\src\scss\theme\_navbar-vertical.scss" />
+    <Content Include="Template\src\scss\theme\_navbar.scss" />
+    <Content Include="Template\src\scss\theme\_offcanvas.scss" />
+    <Content Include="Template\src\scss\theme\_pagination.scss" />
+    <Content Include="Template\src\scss\theme\_plugins.scss" />
+    <Content Include="Template\src\scss\theme\_progress.scss" />
+    <Content Include="Template\src\scss\theme\_reboot.scss" />
+    <Content Include="Template\src\scss\theme\_root.scss" />
+    <Content Include="Template\src\scss\theme\_scrollbar.scss" />
+    <Content Include="Template\src\scss\theme\_search-box.scss" />
+    <Content Include="Template\src\scss\theme\_setting-panel.scss" />
+    <Content Include="Template\src\scss\theme\_showcase.scss" />
+    <Content Include="Template\src\scss\theme\_sortable.scss" />
+    <Content Include="Template\src\scss\theme\_support-chat.scss" />
+    <Content Include="Template\src\scss\theme\_table.scss" />
+    <Content Include="Template\src\scss\theme\_theme.scss" />
+    <Content Include="Template\src\scss\theme\_timeline.scss" />
+    <Content Include="Template\src\scss\theme\_toasts.scss" />
+    <Content Include="Template\src\scss\theme\_tooltip.scss" />
+    <Content Include="Template\src\scss\theme\_type.scss" />
+    <Content Include="Template\src\scss\theme\_typing.scss" />
+    <Content Include="Template\src\scss\theme\_utilities.scss" />
+    <Content Include="Template\src\scss\theme\_variables.scss" />
+    <Content Include="Template\src\scss\theme\_wizard.scss" />
+    <Content Include="Template\src\scss\user.scss" />
+    <Content Include="Template\src\scss\_bootstrap.scss" />
+    <Content Include="Template\src\scss\_user-variables.scss" />
+    <Content Include="Template\vendors.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Template\public\vendors\tinymce\tinymce.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3310</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44345/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

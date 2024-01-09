@@ -1,0 +1,9 @@
+﻿body {
+}
+footer-fix {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* Change the background color as needed */
+    padding: 10px 0;
+}
