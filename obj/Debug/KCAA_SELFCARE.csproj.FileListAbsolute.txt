@@ -101,3 +101,6 @@ D:\Documents\01_Agile\17_NCAA\Test Web Forms\bin\Microsoft.Owin.Security.Microso
 D:\Documents\01_Agile\17_NCAA\Test Web Forms\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Documents\01_Agile\17_NCAA\Test Web Forms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Documents\01_Agile\17_NCAA\Test Web Forms\obj\Debug\KCAA_SELFCARE.csproj.CopyComplete
+D:\Documents\01_Agile\17_NCAA\KcaaSelfcare\obj\Debug\KCAA_SELFCARE.csproj.AssemblyReference.cache
+D:\Documents\01_Agile\17_NCAA\KcaaSelfcare\obj\Debug\Test Web Forms.dll
+D:\Documents\01_Agile\17_NCAA\KcaaSelfcare\obj\Debug\Test Web Forms.pdb
