@@ -3,13 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <div>
             <div>
-                <nav class="mb-2" aria-label="breadcrumb">
+               <%-- <nav class="mb-2" aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="#!">Page 1</a></li>
                         <li class="breadcrumb-item"><a href="#!">Page 2</a></li>
                         <li class="breadcrumb-item active">Default</li>
                     </ol>
-                </nav>
+                </nav>--%>
                 <h2 class="mb-4">Apply Leave</h2>
 
                 <div class="row">

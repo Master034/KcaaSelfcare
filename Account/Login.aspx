@@ -48,12 +48,15 @@
                   <asp:Label runat="server" class="form-check-label mb-0" AssociatedControlID="RememberMe" for="basic-checkbox">Remember me?</asp:Label>
                 </div>
               </div>
-              <div class="col-auto"><a class="fs--1 fw-semi-bold" href="Forgot">Forgot Password?</a></div>
+              <%--<div class="col-auto"><a class="fs--1 fw-semi-bold" href="Account/Forgot">Forgot Password?</a></div>--%>
+                <asp:HyperLink href="Forgot" runat="server" class="col-auto fs--1 fw-bold" ID="ForgotHyperLink" ViewStateMode="Disabled">Forgot Password?</asp:HyperLink>
             </div>
-            <button class="btn btn-primary w-100 mb-3">Sign In</button>
+              <%--<asp:Button OnClick="LogIn" ID="Button1" runat="server" Text="Button" />--%>
+                <asp:HyperLink NavigateUrl="~/LeaveApplication" runat="server" class="btn btn-primary w-100 mb-3" ID="LoginLink" ViewStateMode="Disabled">Sign In</asp:HyperLink>
+             
                <p>
                     <asp:HyperLink runat="server" class="fs--1 fw-bold" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
-                </p>    
+                </p>   
           </div>
         </div>
       </div>
