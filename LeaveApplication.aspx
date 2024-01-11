@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="LeaveApplication.aspx.cs" Inherits="Test_Web_Forms.LeaveApplication" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
         <div>
             <div>
                <%-- <nav class="mb-2" aria-label="breadcrumb">

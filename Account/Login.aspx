@@ -52,7 +52,7 @@
                 <asp:HyperLink href="Forgot" runat="server" class="col-auto fs--1 fw-bold" ID="ForgotHyperLink" ViewStateMode="Disabled">Forgot Password?</asp:HyperLink>
             </div>
               <%--<asp:Button OnClick="LogIn" ID="Button1" runat="server" Text="Button" />--%>
-                <asp:HyperLink NavigateUrl="~/LeaveApplication" runat="server" class="btn btn-primary w-100 mb-3" ID="LoginLink" ViewStateMode="Disabled">Sign In</asp:HyperLink>
+                <asp:HyperLink NavigateUrl="~/Default" runat="server" class="btn btn-primary w-100 mb-3" ID="LoginLink" ViewStateMode="Disabled">Sign In</asp:HyperLink>
              
                <p>
                     <asp:HyperLink runat="server" class="fs--1 fw-bold" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>

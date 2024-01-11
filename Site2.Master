@@ -12,7 +12,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title runat="server">Phoenix</title>
+    <title runat="server">KCAA-SelfCare Portal</title>
 
 
     <!-- ===============================================-->
@@ -93,7 +93,10 @@
                   </a>
                   <div class="parent-wrapper label-1">
                     <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-e-commerce">
-                      <li class="collapsed-nav-item-title d-none">Dashboard
+                         <li class="nav-item"><a class="nav-link" href="Default.aspx" data-bs-toggle="" aria-expanded="false">
+                          <div class="d-flex align-items-center"><span class="nav-link-text">Dashboard</span>
+                          </div>
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -113,13 +116,13 @@
                       <li class="collapsed-nav-item-title d-none">Home
                       </li>
                       
-                      <li class="nav-item"><a class="nav-link" href="LeaveApplication.aspx" data-bs-toggle="" aria-expanded="false">
+                      <li class="nav-item"><a class="nav-link" href="About.aspx" data-bs-toggle="" aria-expanded="false">
                           <div class="d-flex align-items-center"><span class="nav-link-text">Leave List</span>
                           </div>
                         </a>
                       </li>
                           <li class="nav-item"><a class="nav-link" href="LeaveApplication.aspx" data-bs-toggle="" aria-expanded="false">
-                          <div class="d-flex align-items-center"><span class="nav-link-text">Leave management</span>
+                          <div class="d-flex align-items-center"><span class="nav-link-text">Create Leave</span>
                           </div>
                         </a>
                       </li>
@@ -437,7 +440,7 @@
                   <div class="card-body p-0">
                     <div class="text-center pt-4 pb-3">
                       <div class="avatar avatar-xl ">
-                        <img class="rounded-circle " src="Template/public/assets/img/team/72x72/57.webp" alt="" />
+                        <img class="rounded-circle " src="Template/public/assets/img/female.png" alt="" />
 
                       </div>
                       <h6 class="mt-2 text-black">Jerry Seinfield</h6>
@@ -491,7 +494,6 @@
                       <h6 class="dropdown-header text-1000 fs--1 border-bottom border-200 py-2 lh-sm">Recently Searched </h6>
                       <div class="py-2"><a class="dropdown-item" href="apps/e-commerce/landing/product-details.html">
                           <div class="d-flex align-items-center">
-
                             <div class="fw-normal text-1000 title"><span class="fa-solid fa-clock-rotate-left" data-fa-transform="shrink-2"></span> Store Macbook</div>
                           </div>
                         </a>

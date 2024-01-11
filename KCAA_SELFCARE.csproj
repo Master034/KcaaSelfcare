@@ -517,6 +517,7 @@
     <Content Include="Template\public\assets\img\favicons\favicon-32x32.png" />
     <Content Include="Template\public\assets\img\favicons\favicon.ico" />
     <Content Include="Template\public\assets\img\favicons\mstile-150x150.png" />
+    <Content Include="Template\public\assets\img\female.png" />
     <Content Include="Template\public\assets\img\gallery\1.png" />
     <Content Include="Template\public\assets\img\gallery\10.png" />
     <Content Include="Template\public\assets\img\gallery\11.png" />
