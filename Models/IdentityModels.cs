@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -38,6 +39,9 @@ namespace Test_Web_Forms.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Leave> Leaves { get; set; }
     }
 }
 

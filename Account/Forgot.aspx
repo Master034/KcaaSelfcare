@@ -26,7 +26,7 @@
                         <h4 class="text-1000">Forgot your password?</h4>
                         <p class="text-700 mb-5">Enter your email below and we will <br class="d-md-none" />send you <br class="d-none d-xxl-block" />a reset link</p>
                         <div class="d-flex align-items-center mb-5">
-                          <input class="form-control flex-1" id="email" type="email" placeholder="Email" />
+                          <input runat="server" class="form-control flex-1" id="Email" type="email" placeholder="Email" />
                           <button class="btn btn-primary ms-2">Send<span class="fas fa-chevron-right ms-2"></span></button>
                         </div><a class="fs--1 fw-bold" href="login">Back to Login?</a>
                       </div>

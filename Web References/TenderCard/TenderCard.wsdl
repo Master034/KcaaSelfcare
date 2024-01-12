@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/page/tendercard" targetNamespace="urn:microsoft-dynamics-schemas/page/tendercard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/page/tendercard" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:simpleType name="Status">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="New" />
+          <xsd:enumeration value="Archived" />
+          <xsd:enumeration value="Opening" />
+          <xsd:enumeration value="Pending_Approval" />
+          <xsd:enumeration value="Approved" />
+          <xsd:enumeration value="Rejected" />
+          <xsd:enumeration value="Terminated" />
+          <xsd:enumeration value="Open" />
+          <xsd:enumeration value="Released" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Tender_Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Open" />
+          <xsd:enumeration value="Restricted" />
+          <xsd:enumeration value="Direct" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Process_Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_quote__blank__quote_" />
+          <xsd:enumeration value="Direct" />
+          <xsd:enumeration value="Tender" />
+          <xsd:enumeration value="Low_Value" />
+          <xsd:enumeration value="Restricted" />
+          <xsd:enumeration value="Framework_Agreement" />
+          <xsd:enumeration value="RFQ" />
+          <xsd:enumeration value="RFP" />
+          <xsd:enumeration value="EOI" />
+          <xsd:enumeration value="Supplier_Categories" />
+          <xsd:enumeration value="Framework_Quotes" />
+          <xsd:enumeration value="FA_Disposal_Quote" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="Procurement_Documents_Sub_Form">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Document_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Document_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Mandatory" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Checked" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Quote_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Line_No" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Procurement_Documents_Sub_Form_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="Procurement_Documents_Sub_Form" type="tns:Procurement_Documents_Sub_Form" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="G_L_Account" />
+          <xsd:enumeration value="Item" />
+          <xsd:enumeration value="Resource" />
+          <xsd:enumeration value="Fixed_Asset" />
+          <xsd:enumeration value="Charge_Item" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="Procurement_Request_Lines">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Item_Category_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Type" type="tns:Type" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Specification2" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Quantity" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Unit_of_Measure" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Unit_Price" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Procurement_Plan" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Procurement_Plan_Item" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Budget_Line" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Amount_LCY" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Requisition_No" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Procurement_Request_Lines_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="Procurement_Request_Lines" type="tns:Procurement_Request_Lines" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="Scope_Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Scope_Parameter" />
+          <xsd:enumeration value="Objective_Heading" />
+          <xsd:enumeration value="Objective_Heading_End" />
+          <xsd:enumeration value="Sub_Heading" />
+          <xsd:enumeration value="Sub_Heading_End" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="Tender_Scope_of_Work">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Scope_Type" type="tns:Scope_Type" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Tender_Scope_of_Work_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="Tender_Scope_of_Work" type="tns:Tender_Scope_of_Work" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="Type_3">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Scope_Parameter" />
+          <xsd:enumeration value="Objective_Heading" />
+          <xsd:enumeration value="Objective_Heading_End" />
+          <xsd:enumeration value="Sub_Heading" />
+          <xsd:enumeration value="Sub_Heading_End" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="TypeAdd">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Scope" />
+          <xsd:enumeration value="Specifications" />
+          <xsd:enumeration value="Addendum" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="Tender_Addendum">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Type" type="tns:Type_3" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Tender_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="TypeAdd" type="tns:TypeAdd" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Tender_Addendum_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="Tender_Addendum" type="tns:Tender_Addendum" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="Role">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Member" />
+          <xsd:enumeration value="Chair" />
+          <xsd:enumeration value="Secretary" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="Opening_Committee_Members">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Employee_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Role" type="tns:Role" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Opening_Committee_Members_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="Opening_Committee_Members" type="tns:Opening_Committee_Members" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Addendum_Registration">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Prospect_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Tender_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Name_of_the_Firm" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Postal_Address" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Telephone_Contacts" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Company_Email" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Contact_Person" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Addendum_Registration_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="Addendum_Registration" type="tns:Addendum_Registration" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TenderCard">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Title" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Requisition_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Procurement_Plan_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Creation_Date" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_1_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_2_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="User_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Category" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Reference_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Quotation_Deadline" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Expected_Closing_Time" type="xsd:time" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Committee_Submission_Date" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Committee_Submission_Time" type="xsd:time" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Termination_Date" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Termination_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Termination_Reason" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Status" type="tns:Status" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Tender_Type" type="tns:Tender_Type" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Submitted_To_Portal" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Process_Type" type="tns:Process_Type" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Control13" type="tns:Procurement_Documents_Sub_Form_List" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Control12" type="tns:Procurement_Request_Lines_List" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Tender_Scope_of_Work" type="tns:Tender_Scope_of_Work_List" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Tender_Addendum" type="tns:Tender_Addendum_List" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Committee" type="tns:Opening_Committee_Members_List" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Addendum" type="tns:Addendum_Registration_List" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TenderCard_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="TenderCard" type="tns:TenderCard" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="TenderCard_Fields">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="No" />
+          <xsd:enumeration value="Title" />
+          <xsd:enumeration value="Requisition_No" />
+          <xsd:enumeration value="Procurement_Plan_No" />
+          <xsd:enumeration value="Creation_Date" />
+          <xsd:enumeration value="Shortcut_Dimension_1_Code" />
+          <xsd:enumeration value="Shortcut_Dimension_2_Code" />
+          <xsd:enumeration value="User_ID" />
+          <xsd:enumeration value="Category" />
+          <xsd:enumeration value="Reference_No" />
+          <xsd:enumeration value="Quotation_Deadline" />
+          <xsd:enumeration value="Expected_Closing_Time" />
+          <xsd:enumeration value="Committee_Submission_Date" />
+          <xsd:enumeration value="Committee_Submission_Time" />
+          <xsd:enumeration value="Termination_Date" />
+          <xsd:enumeration value="Termination_Code" />
+          <xsd:enumeration value="Termination_Reason" />
+          <xsd:enumeration value="Status" />
+          <xsd:enumeration value="Tender_Type" />
+          <xsd:enumeration value="Submitted_To_Portal" />
+          <xsd:enumeration value="Process_Type" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="TenderCard_Filter">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Field" type="tns:TenderCard_Fields" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="Criteria" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Read">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="No" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Read_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="TenderCard" type="tns:TenderCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReadByRecId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="recId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReadByRecId_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="TenderCard" type="tns:TenderCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReadMultiple">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="filter" type="tns:TenderCard_Filter" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="bookmarkKey" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="setSize" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReadMultiple_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="ReadMultiple_Result" type="tns:TenderCard_List" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IsUpdated">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IsUpdated_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="IsUpdated_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetRecIdFromKey">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetRecIdFromKey_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="GetRecIdFromKey_Result" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Create">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="TenderCard" type="tns:TenderCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Create_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="TenderCard" type="tns:TenderCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateMultiple">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="TenderCard_List" type="tns:TenderCard_List" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateMultiple_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="TenderCard_List" type="tns:TenderCard_List" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Update">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="TenderCard" type="tns:TenderCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Update_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="TenderCard" type="tns:TenderCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateMultiple">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="TenderCard_List" type="tns:TenderCard_List" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateMultiple_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="TenderCard_List" type="tns:TenderCard_List" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Control13">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Control13_Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Control13_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Delete_Control13_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Control12">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Control12_Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Control12_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Delete_Control12_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Tender_Scope_of_Work">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Tender_Scope_of_Work_Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Tender_Scope_of_Work_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Delete_Tender_Scope_of_Work_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Tender_Addendum">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Tender_Addendum_Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Tender_Addendum_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Delete_Tender_Addendum_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Committee">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Committee_Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Committee_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Delete_Committee_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Addendum">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Addendum_Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_Addendum_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Delete_Addendum_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="Read">
+    <part name="parameters" element="tns:Read" />
+  </message>
+  <message name="Read_Result">
+    <part name="parameters" element="tns:Read_Result" />
+  </message>
+  <message name="ReadByRecId">
+    <part name="parameters" element="tns:ReadByRecId" />
+  </message>
+  <message name="ReadByRecId_Result">
+    <part name="parameters" element="tns:ReadByRecId_Result" />
+  </message>
+  <message name="ReadMultiple">
+    <part name="parameters" element="tns:ReadMultiple" />
+  </message>
+  <message name="ReadMultiple_Result">
+    <part name="parameters" element="tns:ReadMultiple_Result" />
+  </message>
+  <message name="IsUpdated">
+    <part name="parameters" element="tns:IsUpdated" />
+  </message>
+  <message name="IsUpdated_Result">
+    <part name="parameters" element="tns:IsUpdated_Result" />
+  </message>
+  <message name="GetRecIdFromKey">
+    <part name="parameters" element="tns:GetRecIdFromKey" />
+  </message>
+  <message name="GetRecIdFromKey_Result">
+    <part name="parameters" element="tns:GetRecIdFromKey_Result" />
+  </message>
+  <message name="Create">
+    <part name="parameters" element="tns:Create" />
+  </message>
+  <message name="Create_Result">
+    <part name="parameters" element="tns:Create_Result" />
+  </message>
+  <message name="CreateMultiple">
+    <part name="parameters" element="tns:CreateMultiple" />
+  </message>
+  <message name="CreateMultiple_Result">
+    <part name="parameters" element="tns:CreateMultiple_Result" />
+  </message>
+  <message name="Update">
+    <part name="parameters" element="tns:Update" />
+  </message>
+  <message name="Update_Result">
+    <part name="parameters" element="tns:Update_Result" />
+  </message>
+  <message name="UpdateMultiple">
+    <part name="parameters" element="tns:UpdateMultiple" />
+  </message>
+  <message name="UpdateMultiple_Result">
+    <part name="parameters" element="tns:UpdateMultiple_Result" />
+  </message>
+  <message name="Delete_Control13">
+    <part name="parameters" element="tns:Delete_Control13" />
+  </message>
+  <message name="Delete_Control13_Result">
+    <part name="parameters" element="tns:Delete_Control13_Result" />
+  </message>
+  <message name="Delete_Control12">
+    <part name="parameters" element="tns:Delete_Control12" />
+  </message>
+  <message name="Delete_Control12_Result">
+    <part name="parameters" element="tns:Delete_Control12_Result" />
+  </message>
+  <message name="Delete_Tender_Scope_of_Work">
+    <part name="parameters" element="tns:Delete_Tender_Scope_of_Work" />
+  </message>
+  <message name="Delete_Tender_Scope_of_Work_Result">
+    <part name="parameters" element="tns:Delete_Tender_Scope_of_Work_Result" />
+  </message>
+  <message name="Delete_Tender_Addendum">
+    <part name="parameters" element="tns:Delete_Tender_Addendum" />
+  </message>
+  <message name="Delete_Tender_Addendum_Result">
+    <part name="parameters" element="tns:Delete_Tender_Addendum_Result" />
+  </message>
+  <message name="Delete_Committee">
+    <part name="parameters" element="tns:Delete_Committee" />
+  </message>
+  <message name="Delete_Committee_Result">
+    <part name="parameters" element="tns:Delete_Committee_Result" />
+  </message>
+  <message name="Delete_Addendum">
+    <part name="parameters" element="tns:Delete_Addendum" />
+  </message>
+  <message name="Delete_Addendum_Result">
+    <part name="parameters" element="tns:Delete_Addendum_Result" />
+  </message>
+  <portType name="TenderCard_Port">
+    <operation name="Read">
+      <input name="Read" message="tns:Read" />
+      <output name="Read_Result" message="tns:Read_Result" />
+    </operation>
+    <operation name="ReadByRecId">
+      <input name="ReadByRecId" message="tns:ReadByRecId" />
+      <output name="ReadByRecId_Result" message="tns:ReadByRecId_Result" />
+    </operation>
+    <operation name="ReadMultiple">
+      <input name="ReadMultiple" message="tns:ReadMultiple" />
+      <output name="ReadMultiple_Result" message="tns:ReadMultiple_Result" />
+    </operation>
+    <operation name="IsUpdated">
+      <input name="IsUpdated" message="tns:IsUpdated" />
+      <output name="IsUpdated_Result" message="tns:IsUpdated_Result" />
+    </operation>
+    <operation name="GetRecIdFromKey">
+      <input name="GetRecIdFromKey" message="tns:GetRecIdFromKey" />
+      <output name="GetRecIdFromKey_Result" message="tns:GetRecIdFromKey_Result" />
+    </operation>
+    <operation name="Create">
+      <input name="Create" message="tns:Create" />
+      <output name="Create_Result" message="tns:Create_Result" />
+    </operation>
+    <operation name="CreateMultiple">
+      <input name="CreateMultiple" message="tns:CreateMultiple" />
+      <output name="CreateMultiple_Result" message="tns:CreateMultiple_Result" />
+    </operation>
+    <operation name="Update">
+      <input name="Update" message="tns:Update" />
+      <output name="Update_Result" message="tns:Update_Result" />
+    </operation>
+    <operation name="UpdateMultiple">
+      <input name="UpdateMultiple" message="tns:UpdateMultiple" />
+      <output name="UpdateMultiple_Result" message="tns:UpdateMultiple_Result" />
+    </operation>
+    <operation name="Delete_Control13">
+      <input name="Delete_Control13" message="tns:Delete_Control13" />
+      <output name="Delete_Control13_Result" message="tns:Delete_Control13_Result" />
+    </operation>
+    <operation name="Delete_Control12">
+      <input name="Delete_Control12" message="tns:Delete_Control12" />
+      <output name="Delete_Control12_Result" message="tns:Delete_Control12_Result" />
+    </operation>
+    <operation name="Delete_Tender_Scope_of_Work">
+      <input name="Delete_Tender_Scope_of_Work" message="tns:Delete_Tender_Scope_of_Work" />
+      <output name="Delete_Tender_Scope_of_Work_Result" message="tns:Delete_Tender_Scope_of_Work_Result" />
+    </operation>
+    <operation name="Delete_Tender_Addendum">
+      <input name="Delete_Tender_Addendum" message="tns:Delete_Tender_Addendum" />
+      <output name="Delete_Tender_Addendum_Result" message="tns:Delete_Tender_Addendum_Result" />
+    </operation>
+    <operation name="Delete_Committee">
+      <input name="Delete_Committee" message="tns:Delete_Committee" />
+      <output name="Delete_Committee_Result" message="tns:Delete_Committee_Result" />
+    </operation>
+    <operation name="Delete_Addendum">
+      <input name="Delete_Addendum" message="tns:Delete_Addendum" />
+      <output name="Delete_Addendum_Result" message="tns:Delete_Addendum_Result" />
+    </operation>
+  </portType>
+  <binding name="TenderCard_Binding" type="tns:TenderCard_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="Read">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Read" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Read">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Read_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReadByRecId">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:ReadByRecId" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReadByRecId">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReadByRecId_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReadMultiple">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:ReadMultiple" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReadMultiple">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReadMultiple_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="IsUpdated">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:IsUpdated" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="IsUpdated">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="IsUpdated_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetRecIdFromKey">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:GetRecIdFromKey" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetRecIdFromKey">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetRecIdFromKey_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Create">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Create" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Create">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Create_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateMultiple">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:CreateMultiple" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateMultiple">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateMultiple_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Update">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Update" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Update">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Update_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UpdateMultiple">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:UpdateMultiple" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UpdateMultiple">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UpdateMultiple_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Delete_Control13">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Delete_Control13" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Delete_Control13">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Delete_Control13_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Delete_Control12">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Delete_Control12" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Delete_Control12">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Delete_Control12_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Delete_Tender_Scope_of_Work">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Delete_Tender_Scope_of_Work" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Delete_Tender_Scope_of_Work">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Delete_Tender_Scope_of_Work_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Delete_Tender_Addendum">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Delete_Tender_Addendum" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Delete_Tender_Addendum">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Delete_Tender_Addendum_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Delete_Committee">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Delete_Committee" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Delete_Committee">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Delete_Committee_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Delete_Addendum">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/tendercard:Delete_Addendum" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Delete_Addendum">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Delete_Addendum_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TenderCard_Service">
+    <port name="TenderCard_Port" binding="tns:TenderCard_Binding">
+      <address location="https://agileapp.agilebiz.co.ke:12167/tpf22/WS/test/Page/TenderCard" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

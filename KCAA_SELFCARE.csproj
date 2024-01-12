@@ -224,6 +224,10 @@
     <Content Include="Scripts\bootstrap.esm.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.min.js.map" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="LeaveApplication.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -1586,8 +1590,32 @@
     <Compile Include="LeaveApplication.aspx.designer.cs">
       <DependentUpon>LeaveApplication.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401121002289_initial.cs" />
+    <Compile Include="Migrations\202401121002289_initial.Designer.cs">
+      <DependentUpon>202401121002289_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401121025252_AddEmployeeTable.cs" />
+    <Compile Include="Migrations\202401121025252_AddEmployeeTable.Designer.cs">
+      <DependentUpon>202401121025252_AddEmployeeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401121031071_AddLeaveTable.cs" />
+    <Compile Include="Migrations\202401121031071_AddLeaveTable.Designer.cs">
+      <DependentUpon>202401121031071_AddLeaveTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401121035119_AddLeaveBalanceColumnToLeave.cs" />
+    <Compile Include="Migrations\202401121035119_AddLeaveBalanceColumnToLeave.Designer.cs">
+      <DependentUpon>202401121035119_AddLeaveBalanceColumnToLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configs.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1609,6 +1637,7 @@
     <Compile Include="Site2.Master.designer.cs">
       <DependentUpon>Site2.Master</DependentUpon>
     </Compile>
+    <Compile Include="Services.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Template\public\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -1634,6 +1663,16 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CustomerCardWS2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\TenderCard\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2528,6 +2567,22 @@
     <Content Include="Template\src\scss\_bootstrap.scss" />
     <Content Include="Template\src\scss\_user-variables.scss" />
     <Content Include="Template\vendors.json" />
+    <Content Include="Web References\TenderCard\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\TenderCard\TenderCard.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\CustomerCardWS2\CustomerCardWS2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\CustomerCardWS2\CustomerCardWS2.wsdl" />
+    <None Include="Web References\CustomerCardWS2\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TenderCard\TenderCard.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2543,6 +2598,47 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://agileapp.agilebiz.co.ke:12167/tpf22/WS/test/Page/CustomerCardWS2">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CustomerCardWS2\</RelPath>
+      <UpdateFromURL>https://agileapp.agilebiz.co.ke:12167/tpf22/WS/test/Page/CustomerCardWS2</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Test_Web_Forms_CustomerCardWS2_CustomerCardWS2_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://agileapp.agilebiz.co.ke:12167/tpf22/WS/test/Page/TenderCard">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TenderCard\</RelPath>
+      <UpdateFromURL>https://agileapp.agilebiz.co.ke:12167/tpf22/WS/test/Page/TenderCard</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Test_Web_Forms_TenderCard_TenderCard_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202401121002289_initial.resx">
+      <DependentUpon>202401121002289_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401121025252_AddEmployeeTable.resx">
+      <DependentUpon>202401121025252_AddEmployeeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401121031071_AddLeaveTable.resx">
+      <DependentUpon>202401121031071_AddLeaveTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401121035119_AddLeaveBalanceColumnToLeave.resx">
+      <DependentUpon>202401121035119_AddLeaveBalanceColumnToLeave.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

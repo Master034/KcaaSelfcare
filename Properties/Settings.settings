@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Test_Web_Forms.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Test_Web_Forms_TenderCard_TenderCard_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://agileapp.agilebiz.co.ke:12167/tpf22/WS/test/Page/TenderCard</Value>
+    </Setting>
+    <Setting Name="Test_Web_Forms_CustomerCardWS2_CustomerCardWS2_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://agileapp.agilebiz.co.ke:12167/tpf22/WS/test/Page/CustomerCardWS2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

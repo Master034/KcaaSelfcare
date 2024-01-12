@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://agileapp.agilebiz.co.ke:12167/tpf22/WS/test/Page/TenderCard" filename="TenderCard.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

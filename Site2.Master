@@ -828,6 +828,17 @@
     <script src="Template/public/vendors/leaflet.tilelayer.colorfilter/leaflet-tilelayer-colorfilter.min.js"></script>
     <script src="Template/public/assets/js/ecommerce-dashboard.js"></script>
 
+          <%--<script src="../../vendors/popper/popper.min.js"></script>--%>
+    <%--<script src="../../vendors/bootstrap/bootstrap.min.js"></script>--%>
+    <%--<script src="../../vendors/anchorjs/anchor.min.js"></script>--%>
+    <%--<script src="../../vendors/is/is.min.js"></script>--%>
+    <%--<script src="../../vendors/fontawesome/all.min.js"></script>--%>
+    <%--<script src="../../vendors/lodash/lodash.min.js"></script>--%>
+    <%--<script src="../../vendors/list.js/list.min.js"></script>--%>
+    <script src="Template/public/vendors/echarts/echarts.min.js"></script>
+    <script src="Template/public/vendors/prism/prism.js"></script>
+    <script src="Template/public/assets/js/echarts-example.js"></script>
+
   </body>
 
 </html>

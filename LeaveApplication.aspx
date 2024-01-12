@@ -3,15 +3,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
         <div>
             <div>
-               <%-- <nav class="mb-2" aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="#!">Page 1</a></li>
-                        <li class="breadcrumb-item"><a href="#!">Page 2</a></li>
-                        <li class="breadcrumb-item active">Default</li>
-                    </ol>
-                </nav>--%>
                 <h2 class="mb-4">Apply Leave</h2>
-
                 <div class="row">
                     <div class="col-xl-9">
                         <form runat="server" class="row g-3 mb-6">
@@ -29,12 +21,7 @@
                                             <asp:ListItem>Finance</asp:ListItem>  
                                             <asp:ListItem>HR</asp:ListItem>  
                                     </asp:DropDownList>
-                                    <%--<select class="form-select" id="floatingSelectTask">
-                                        <option value="selected">Select task view</option>
-                                        <option selected="ICT">ICT</option>
-                                        <option value="2">external</option>
-                                        <option value="3">organizational</option>
-                                    </select>--%>
+                                
                                     <label for="ddlDepartment">Department</label>
                                 </div>
                             </div>

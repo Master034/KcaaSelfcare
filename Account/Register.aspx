@@ -46,14 +46,14 @@
                         <label class="form-label" for="password">Confirm Password</label>
                         <div class="form-icon-container">
                             <asp:TextBox runat="server" ID="ConfirmPassword" class="form-control form-icon-input" type="password" placeholder="ConfirmPassword" /><span class="fas fa-key text-900 fs--1 form-icon"></span>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
+                           <%-- <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
                             <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />--%>
                         </div>
                     </div>
 
-            <button runat="server" OnClick="CreateUser_Click" class="btn btn-primary w-100 mb-3">Register</button>
+                    <asp:Button runat="server" OnClick="CreateUser_Click" class="btn btn-primary w-100 mb-3" Text="Register"></asp:Button>
                     <p>
                     <asp:HyperLink href="login" runat="server" class="fs--1 fw-bold" ID="LoginHyperLink" ViewStateMode="Disabled">Already Have an Account? Login.</asp:HyperLink>
                 </p>  

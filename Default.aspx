@@ -59,5 +59,30 @@
           </div>
         </div>
 
+    <div class="row g-4 mb-9">
+          <div class="col-xl-6">
+            <div class="card shadow-none border border-300" data-component-card="data-component-card">
+              <div class="card-header p-4 border-bottom border-300 bg-soft">
+                <div class="row g-3 justify-content-between align-items-center">
+                  <div class="col-12 col-md">
+                    <h4 class="text-900 mb-0" data-anchor="data-anchor">Leave Taken</h4>
+                  </div>
+                 
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <div class="collapse code-collapse" id="basic-bar-chart-code">
+                  <%--<pre class="scrollbar" style="max-height:420px"><code class="language-html">&lt;!-- Find the JS file for the following chart at: src/js/charts/echarts/examples/basic-bar-chart.js--&gt;
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/echarts-example.js--&gt;
+&lt;div class=&quot;echart-basic-bar-chart-example&quot; style=&quot;min-height:300px&quot;&gt;&lt;/div&gt;</code></pre>--%>
+                </div>
+                <div class="p-4 code-to-copy">
+                  <div class="echart-basic-bar-chart-example" style="min-height:300px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+    </div>
     
 </asp:Content>
